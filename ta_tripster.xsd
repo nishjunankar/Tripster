@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tripster" type="tripsterType">
+	    <xs:key name="userId">
+	      <xs:selector xpath="user"/>
+	      <xs:field xpath="login"/>
+	    </xs:key>
+	    <xs:key name="contentId">
+	      <xs:selector xpath="user/trip/album/content"/>
+	      <xs:field xpath="id"/>
+	      <xs:field xpath="source"/>
+	    </xs:key>
+		<xs:key name="tripId">
+		  <xs:selector xpath="user/trip"/>
+		  <xs:field xpath="id"/>
+		</xs:key>
+		<xs:key name="locationId">
+		  <xs:selector xpath="user/trip/location"/>
+		  <xs:field xpath="name"/>
+		</xs:key>
+
+      <xs:keyref name="friendRef" refer="userId">
+      	<xs:selector xpath="user"/>
+      	<xs:field xpath="friend"/>
+      </xs:keyref>
+	  <xs:keyref name="inviteTripRef" refer="userId">
+      	<xs:selector xpath="user/trip/invite"/>
+      	<xs:field xpath="friendid"/>
+      </xs:keyref>
+      <xs:keyref name="rateContentRef" refer="contentId">
+      	<xs:selector xpath="user/rateContent"/>
+      	<xs:field xpath="conentid"/>
+        <xs:field xpath="contentSource"/>
+      </xs:keyref>
+	  <xs:keyref name="rateTripRef" refer="tripId">
+      	<xs:selector xpath="user/rateTrip"/>
+      	<xs:field xpath="tripid"/>
+      </xs:keyref>
+	  <xs:keyref name="requestTripRef" refer="tripId">
+      	<xs:selector xpath="user/request"/>
+      	<xs:field xpath="tripid"/>
+      </xs:keyref>
+	  <xs:keyref name="dreamLocationRef" refer="locationId">
+      	<xs:selector xpath="user"/>
+      	<xs:field xpath="dream"/>
+      </xs:keyref>
+    </xs:element>
+
+	<xs:simpleType name="contentClass">
+	  <xs:restriction base="xs:string">
+	    <xs:enumeration value="photo" />
+	    <xs:enumeration value="video" />
+	  </xs:restriction>
+	</xs:simpleType>   
+	
+	<xs:simpleType name="privacyClass">
+	  <xs:restriction base="xs:string">
+	    <xs:enumeration value="private" />
+	    <xs:enumeration value="sharedWithTripMemebers" />
+		<xs:enumeration value="public" />
+	  </xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="statusClass">
+	  <xs:restriction base="xs:string">
+	    <xs:enumeration value="pending" />
+	    <xs:enumeration value="accepted" />
+		<xs:enumeration value="denied" />
+	  </xs:restriction>
+	</xs:simpleType>
+	
+    <xs:complexType name="tripsterType">
+    	<xs:sequence>
+    		<xs:element name="operator" type="xs:string"></xs:element>
+    		<xs:element name="web_url" type="xs:string"></xs:element>
+    		<xs:element name="user" type="userType" minOccurs="0" maxOccurs="unbounded"> 
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="contentType">
+    	<xs:sequence>
+    		<xs:element name="id" type="xs:integer"></xs:element>
+        <xs:element name="source" type="xs:string"></xs:element>
+    		<xs:element name="type" type="contentClass"></xs:element>
+    		<xs:element name="url" type="xs:string"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="userType">
+      <xs:sequence>
+        <xs:element name="login" type="xs:string"></xs:element>
+        <xs:element name="email" type="xs:string"></xs:element>
+        <xs:element name="name" type="xs:string"></xs:element>
+        <xs:element name="affiliation" type="xs:string"></xs:element>
+        <xs:element name="interests" type="xs:string"></xs:element>
+        <xs:element name="friend" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="trip" type="tripType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="rateTrip" type="ratetripType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="rateContent" type="rateContentType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="request" type="requestType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="invite" type="inviteType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="dream" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tripType">
+      <xs:sequence>
+        <xs:element name="id" type="xs:integer"></xs:element>
+        <xs:element name="name" type="xs:string"></xs:element>
+        <xs:element name="feature" type="xs:string"></xs:element>
+        <xs:element name="privacyFlag" type="privacyClass"></xs:element>
+        <xs:element name="album" type="albumType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="location" type="locationType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		<xs:element name="invite" type="inviteType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ratetripType">
+      <xs:sequence>
+   		<xs:element name="tripid" type="xs:integer"></xs:element>
+   		<xs:element name="score" type="xs:integer"></xs:element>
+   		<xs:element name="comment" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="rateContentType">
+      <xs:sequence>
+      <xs:element name="contentid" type="xs:integer"></xs:element>
+      <xs:element name="contentSource" type="xs:string"></xs:element>
+      <xs:element name="score" type="xs:integer"></xs:element>
+      <xs:element name="comment" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="requestType">
+      <xs:sequence>
+      <xs:element name="tripid" type="xs:integer"></xs:element>
+      <xs:element name="status" type="statusClass"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+   <xs:complexType name="inviteType">
+      <xs:sequence>
+      <xs:element name="tripid" type="xs:integer"></xs:element>
+      <xs:element name="friendid" type="xs:string"></xs:element>
+      <xs:element name="status" type="statusClass"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="albumType">
+      <xs:sequence>
+        <xs:element name="id" type="xs:integer"></xs:element>
+        <xs:element name="name" type="xs:string"></xs:element>
+        <xs:element name="privacyFlag" type="privacyClass"></xs:element>
+        <xs:element name="content" type="contentType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="locationType">
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"></xs:element>
+        <xs:element name="type" type="xs:string"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
