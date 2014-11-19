@@ -1,129 +1,144 @@
 <database>
-	<GROUPS>
-		<tuple><G_ID>1</G_ID><NAME>Travel Group A</NAME><PRIVACY_FLAG>null</PRIVACY_FLAG><CREATOR>1</CREATOR></tuple>
-	</GROUPS>
-	<LOCATION>
-		<tuple><L_ID>1</L_ID><LONGITUDE>3</LONGITUDE><LATITUDE>2</LATITUDE><LOC_NAME>London</LOC_NAME><COUNTRY>United Kingdom</COUNTRY><STATE>null</STATE><CITY>London</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
-		<tuple><L_ID>2</L_ID><LONGITUDE>5</LONGITUDE><LATITUDE>4</LATITUDE><LOC_NAME>Paris</LOC_NAME><COUNTRY>France</COUNTRY><STATE>null</STATE><CITY>Paris</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
-		<tuple><L_ID>3</L_ID><LONGITUDE>175</LONGITUDE><LATITUDE>6</LATITUDE><LOC_NAME>New York</LOC_NAME><COUNTRY>United States of America</COUNTRY><STATE>NY</STATE><CITY>New York</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
-		<tuple><L_ID>4</L_ID><LONGITUDE>7</LONGITUDE><LATITUDE>12</LATITUDE><LOC_NAME>San Francisco</LOC_NAME><COUNTRY>United States of America</COUNTRY><STATE>CA</STATE><CITY>San Francisco</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
-		<tuple><L_ID>5</L_ID><LONGITUDE>20</LONGITUDE><LATITUDE>15</LATITUDE><LOC_NAME>Chicago</LOC_NAME><COUNTRY>United States of America</COUNTRY><STATE>IL</STATE><CITY>Chicago</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
-	</LOCATION>
-	<TRIP>
-		<tuple><T_ID>1</T_ID><LOCATION>1</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>1</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG><NAME>TripA</NAME></tuple>
-		<tuple><T_ID>2</T_ID><LOCATION>2</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>2</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG><NAME>TripB</NAME></tuple>
-		<tuple><T_ID>3</T_ID><LOCATION>3</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>3</CREATOR><PRIVACY_FLAG>1</PRIVACY_FLAG><NAME>TripC</NAME></tuple>
-		<tuple><T_ID>4</T_ID><LOCATION>4</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>4</CREATOR><PRIVACY_FLAG>1</PRIVACY_FLAG><NAME>TripD</NAME></tuple>
-		<tuple><T_ID>5</T_ID><LOCATION>5</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>5</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG><NAME>TripE</NAME></tuple>
-	</TRIP>
-	<ALBUM>
-		<tuple><A_ID>1</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>Album1</NAME><CREATOR>1</CREATOR></tuple>
-		<tuple><A_ID>2</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>My Fun Album</NAME><CREATOR>2</CREATOR></tuple>
-		<tuple><A_ID>3</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>A Cool Trip</NAME><CREATOR>3</CREATOR></tuple>
-		<tuple><A_ID>4</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>Fun Trip</NAME><CREATOR>4</CREATOR></tuple>
-		<tuple><A_ID>5</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>This trip sucked</NAME><CREATOR>5</CREATOR></tuple>
-	</ALBUM>
-	<ALBUM_SHARE_GROUP>
-	</ALBUM_SHARE_GROUP>
-	<TRIP_AFFILIATED_GROUPS>
-		<tuple><T_ID>1</T_ID><G_ID>1</G_ID></tuple>
-	</TRIP_AFFILIATED_GROUPS>
-	<USERS>
-		<tuple><U_ID>1</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Nishant</FIRST_NAME><LAST_NAME>Junankar</LAST_NAME><EMAIL>nishjunankar@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>2</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Alexander</FIRST_NAME><LAST_NAME>Kornhauser</LAST_NAME><EMAIL>kornha@seas.upenn.edu</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>3</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Test</FIRST_NAME><LAST_NAME>Person</LAST_NAME><EMAIL>nishj@seas.upenn.edu</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>4</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>David</FIRST_NAME><LAST_NAME>Wright</LAST_NAME><EMAIL>5dwright4mvp@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>5</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>LeBron</FIRST_NAME><LAST_NAME>James</LAST_NAME><EMAIL>lebron.james@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>6</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Thomas</FIRST_NAME><LAST_NAME>Brady</LAST_NAME><EMAIL>isuckatfootball@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>7</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Sterling</FIRST_NAME><LAST_NAME>Archer</LAST_NAME><EMAIL>secretagent@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-		<tuple><U_ID>8</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Minhee</FIRST_NAME><LAST_NAME>Lee</LAST_NAME><EMAIL>lemin@seas.upenn.edu</EMAIL><FB_ID>null</FB_ID><AFFILIATION>null</AFFILIATION></tuple>
-	</USERS>
-	<PHOTO>
-		<tuple><P_ID>1</P_ID><URL>picture.com/picture.jpg</URL><PUBLISHED_BY>1</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:35:47.0</TIME></tuple>
-		<tuple><P_ID>2</P_ID><URL>picture.com/picture2.jpg</URL><PUBLISHED_BY>1</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
-		<tuple><P_ID>3</P_ID><URL>picture.com/picture3.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
-		<tuple><P_ID>4</P_ID><URL>picture.com/picture4.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
-		<tuple><P_ID>5</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
-		<tuple><P_ID>6</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
-		<tuple><P_ID>7</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
-		<tuple><P_ID>8</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>3</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
-		<tuple><P_ID>9</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>3</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
-		<tuple><P_ID>10</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>3</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
-		<tuple><P_ID>11</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>4</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
-		<tuple><P_ID>12</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>4</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>13</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>4</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>14</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>5</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>15</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>5</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>16</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>5</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>17</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>18</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>19</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>20</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>21</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>7</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>22</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>7</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>23</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>7</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>24</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>8</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>25</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>8</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-		<tuple><P_ID>26</P_ID><URL>picture.com/picture5.jpg</URL><PUBLISHED_BY>8</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
-	</PHOTO>
-	<FRIENDS_WITH>
-		<tuple><FRIEND>1</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>1</FRIEND><OTHER_FRIEND>3</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>1</FRIEND><OTHER_FRIEND>8</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>1</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>4</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>6</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>8</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>3</FRIEND><OTHER_FRIEND>1</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>3</FRIEND><OTHER_FRIEND>4</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>3</FRIEND><OTHER_FRIEND>7</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>4</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>4</FRIEND><OTHER_FRIEND>3</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>5</FRIEND><OTHER_FRIEND>6</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>6</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>6</FRIEND><OTHER_FRIEND>5</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>7</FRIEND><OTHER_FRIEND>3</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>7</FRIEND><OTHER_FRIEND>8</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>8</FRIEND><OTHER_FRIEND>1</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>8</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
-		<tuple><FRIEND>8</FRIEND><OTHER_FRIEND>7</OTHER_FRIEND></tuple>
-	</FRIENDS_WITH>
-	<LIKE_PHOTO>
-	</LIKE_PHOTO>
-	<COMMENTS_PHOTO>
-	</COMMENTS_PHOTO>
-	<USERS_IN_GROUPS>
-	</USERS_IN_GROUPS>
-	<PHOTO_SHARE_GROUP>
-	</PHOTO_SHARE_GROUP>
-	<INVITE_TRIP>
-		<tuple><T_ID>1</T_ID><INVITED_USERS>2</INVITED_USERS><INVITED_BY>1</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>1</T_ID><INVITED_USERS>3</INVITED_USERS><INVITED_BY>1</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>2</T_ID><INVITED_USERS>4</INVITED_USERS><INVITED_BY>2</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>2</T_ID><INVITED_USERS>5</INVITED_USERS><INVITED_BY>3</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>3</T_ID><INVITED_USERS>6</INVITED_USERS><INVITED_BY>3</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>3</T_ID><INVITED_USERS>7</INVITED_USERS><INVITED_BY>4</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>4</T_ID><INVITED_USERS>8</INVITED_USERS><INVITED_BY>4</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>4</T_ID><INVITED_USERS>7</INVITED_USERS><INVITED_BY>5</INVITED_BY><ACCEPTED>1</ACCEPTED></tuple>
-		<tuple><T_ID>5</T_ID><INVITED_USERS>5</INVITED_USERS><INVITED_BY>6</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
-	</INVITE_TRIP>
-	<RATE_LOCATION>
-	</RATE_LOCATION>
-	<INTEREST>
-	</INTEREST>
-	<USER_INTEREST>
-	</USER_INTEREST>
-	<TEXT_POST>
-	</TEXT_POST>
-	<COMMENTS_POST>
-	</COMMENTS_POST>
-	<PHOTO_SHARE_TRIP>
-	</PHOTO_SHARE_TRIP>
-	<ALBUM_SHARE_TRIP>
-		<tuple><A_ID>1</A_ID><T_ID>1</T_ID><TIME>2014-11-15 23:04:42.0</TIME><SHARED_BY>1</SHARED_BY></tuple>
-		<tuple><A_ID>2</A_ID><T_ID>2</T_ID><TIME>2014-11-15 23:05:09.0</TIME><SHARED_BY>2</SHARED_BY></tuple>
-		<tuple><A_ID>3</A_ID><T_ID>3</T_ID><TIME>2014-11-15 23:06:52.0</TIME><SHARED_BY>3</SHARED_BY></tuple>
-		<tuple><A_ID>4</A_ID><T_ID>4</T_ID><TIME>2014-11-15 23:06:52.0</TIME><SHARED_BY>4</SHARED_BY></tuple>
-		<tuple><A_ID>5</A_ID><T_ID>5</T_ID><TIME>2014-11-15 23:06:52.0</TIME><SHARED_BY>5</SHARED_BY></tuple>
-	</ALBUM_SHARE_TRIP>
+<USERS>
+<tuple><U_ID>1</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Nishant</FIRST_NAME><LAST_NAME>Junankar</LAST_NAME><EMAIL>nishjunankar@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>2</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Alexander</FIRST_NAME><LAST_NAME>Kornhauser</LAST_NAME><EMAIL>kornha@seas.upenn.edu</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>3</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Test</FIRST_NAME><LAST_NAME>Person</LAST_NAME><EMAIL>nishj@seas.upenn.edu</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>4</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>David</FIRST_NAME><LAST_NAME>Wright</LAST_NAME><EMAIL>5dwright4mvp@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>5</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>LeBron</FIRST_NAME><LAST_NAME>James</LAST_NAME><EMAIL>lebron.james@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>6</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Thomas</FIRST_NAME><LAST_NAME>Brady</LAST_NAME><EMAIL>isuckatfootball@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>7</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Sterling</FIRST_NAME><LAST_NAME>Archer</LAST_NAME><EMAIL>secretagent@gmail.com</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+<tuple><U_ID>8</U_ID><PASSWORD_HASH>Password</PASSWORD_HASH><FIRST_NAME>Minhee</FIRST_NAME><LAST_NAME>Lee</LAST_NAME><EMAIL>lemin@seas.upenn.edu</EMAIL><FB_ID>null</FB_ID><AFFILIATION>Penn</AFFILIATION></tuple>
+</USERS>
+<FRIENDS_WITH>
+<tuple><FRIEND>1</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
+<tuple><FRIEND>1</FRIEND><OTHER_FRIEND>3</OTHER_FRIEND></tuple>
+<tuple><FRIEND>1</FRIEND><OTHER_FRIEND>8</OTHER_FRIEND></tuple>
+<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>1</OTHER_FRIEND></tuple>
+<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>4</OTHER_FRIEND></tuple>
+<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>6</OTHER_FRIEND></tuple>
+<tuple><FRIEND>2</FRIEND><OTHER_FRIEND>8</OTHER_FRIEND></tuple>
+<tuple><FRIEND>3</FRIEND><OTHER_FRIEND>1</OTHER_FRIEND></tuple>
+<tuple><FRIEND>3</FRIEND><OTHER_FRIEND>4</OTHER_FRIEND></tuple>
+<tuple><FRIEND>3</FRIEND><OTHER_FRIEND>7</OTHER_FRIEND></tuple>
+<tuple><FRIEND>4</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
+<tuple><FRIEND>4</FRIEND><OTHER_FRIEND>3</OTHER_FRIEND></tuple>
+<tuple><FRIEND>5</FRIEND><OTHER_FRIEND>6</OTHER_FRIEND></tuple>
+<tuple><FRIEND>6</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
+<tuple><FRIEND>6</FRIEND><OTHER_FRIEND>5</OTHER_FRIEND></tuple>
+<tuple><FRIEND>7</FRIEND><OTHER_FRIEND>3</OTHER_FRIEND></tuple>
+<tuple><FRIEND>7</FRIEND><OTHER_FRIEND>8</OTHER_FRIEND></tuple>
+<tuple><FRIEND>8</FRIEND><OTHER_FRIEND>1</OTHER_FRIEND></tuple>
+<tuple><FRIEND>8</FRIEND><OTHER_FRIEND>2</OTHER_FRIEND></tuple>
+<tuple><FRIEND>8</FRIEND><OTHER_FRIEND>7</OTHER_FRIEND></tuple>
+</FRIENDS_WITH>
+<PHOTO>
+<tuple><P_ID>1</P_ID><URL>http://upload.wikimedia.org/wikipedia/commons/2/2b/GoraBeluha.jpg</URL><PUBLISHED_BY>1</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:35:47.0</TIME></tuple>
+<tuple><P_ID>2</P_ID><URL>http://i.telegraph.co.uk/multimedia/archive/02625/mountain1_2625884k.jpg</URL><PUBLISHED_BY>1</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
+<tuple><P_ID>3</P_ID><URL>http://upload.wikimedia.org/wikipedia/commons/2/20/Red_Slate_Mountain_1.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
+<tuple><P_ID>4</P_ID><URL>http://upload.wikimedia.org/wikipedia/commons/d/d3/Tajik_mountains_edit.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
+<tuple><P_ID>5</P_ID><URL>http://www.mrwallpaper.com/wallpapers/mountains-scenery.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>1</A_ID><TIME>2014-11-15 22:37:53.0</TIME></tuple>
+<tuple><P_ID>6</P_ID><URL>http://ichef.bbci.co.uk/naturelibrary/images/ic/credit/640x395/m/mo/mountain/mountain_1.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
+<tuple><P_ID>7</P_ID><URL>http://channel.nationalgeographic.com/exposure/content/photo/photo/50757_mountains-of-chile_u4otpkuoohegc34cxym6cgqbe3ncurxrbvj6lwuht2ya6mzmafma_610x457.jpg</URL><PUBLISHED_BY>2</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
+<tuple><P_ID>8</P_ID><URL>http://i.telegraph.co.uk/multimedia/archive/02423/london_2423609b.jpg</URL><PUBLISHED_BY>3</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
+<tuple><P_ID>9</P_ID><URL>http://srinistuff.files.wordpress.com/2014/08/london_nla_londonsgrowingupc2a9cpat-hayes-davidson-jason-hawkes.jpg</URL><PUBLISHED_BY>3</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
+<tuple><P_ID>10</P_ID><URL>http://libertychurchlondon.com/wp-content/uploads/2013/01/london1.jpg</URL><PUBLISHED_BY>3</PUBLISHED_BY><A_ID>2</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
+<tuple><P_ID>11</P_ID><URL>http://cdni.wired.co.uk/1920x1280/k_n/London_5.jpg</URL><PUBLISHED_BY>4</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:30.0</TIME></tuple>
+<tuple><P_ID>12</P_ID><URL>http://web.fredonia.edu/iecmap/sites/default/files/images/city-of-London.jpg</URL><PUBLISHED_BY>4</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>13</P_ID><URL>http://cache.graphicslib.viator.com/graphicslib/thumbs674x446/2050/SITours/eiffel-tower-paris-moulin-rouge-show-and-seine-river-cruise-in-paris-150305.jpg</URL><PUBLISHED_BY>4</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>14</P_ID><URL>http://img4.wikia.nocookie.net/__cb20131213104910/disney/images/f/f6/Eiffel_Tower,_Paris.jpg</URL><PUBLISHED_BY>5</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>15</P_ID><URL>http://oproimg-mdz.open-system.fr/boutique/otparis-museumpass/pcp/arc_600_390.jpg</URL><PUBLISHED_BY>5</PUBLISHED_BY><A_ID>3</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>16</P_ID><URL>http://www.milanocard.it/wp-content/uploads/2014/03/Venezia-milano.jpg</URL><PUBLISHED_BY>5</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>17</P_ID><URL>http://i.telegraph.co.uk/multimedia/archive/02370/Venice-winter_2370349b.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>18</P_ID><URL>http://www.telegraph.co.uk/travel/destination/article129429.ece/ALTERNATES/w620/venicetravelguide5.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>19</P_ID><URL>http://foundtheworld.com/wp-content/uploads/2014/07/Venice-Italy-3.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>20</P_ID><URL>http://www.newjetsetters.com/wp-content/uploads/2013/06/Venice-at-Night.jpg</URL><PUBLISHED_BY>6</PUBLISHED_BY><A_ID>4</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>21</P_ID><URL>http://www.topvisitplaces.com/wp-content/uploads/2014/02/rialto-bridge-venice-italy.jpg</URL><PUBLISHED_BY>7</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>22</P_ID><URL>http://www.bmiregional.com/upload/milan.jpg</URL><PUBLISHED_BY>7</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>23</P_ID><URL>http://cache.graphicslib.viator.com/graphicslib/media/68/cinque-terre-day-trip-from-milan-photo_1079656-fit468x296.jpg</URL><PUBLISHED_BY>7</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>24</P_ID><URL>http://drupal.in-cdn.net/cdn/article/public/living_in_milan.jpg</URL><PUBLISHED_BY>8</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>25</P_ID><URL>http://www.castanotours.com/images/info-milan4.jpg</URL><PUBLISHED_BY>8</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+<tuple><P_ID>26</P_ID><URL>http://upload.wikimedia.org/wikipedia/commons/2/23/Hong_Kong_Skyline_Restitch_-_Dec_2007.jpg</URL><PUBLISHED_BY>8</PUBLISHED_BY><A_ID>5</A_ID><TIME>2014-11-15 22:55:31.0</TIME></tuple>
+</PHOTO>
+<TRIP>
+<tuple><T_ID>1</T_ID><LOCATION>1</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>1</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG><NAME>TripA</NAME></tuple>
+<tuple><T_ID>2</T_ID><LOCATION>2</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>2</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG><NAME>TripB</NAME></tuple>
+<tuple><T_ID>3</T_ID><LOCATION>3</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>3</CREATOR><PRIVACY_FLAG>1</PRIVACY_FLAG><NAME>TripC</NAME></tuple>
+<tuple><T_ID>4</T_ID><LOCATION>4</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>4</CREATOR><PRIVACY_FLAG>1</PRIVACY_FLAG><NAME>TripD</NAME></tuple>
+<tuple><T_ID>5</T_ID><LOCATION>5</LOCATION><START_DATE>null</START_DATE><END_DATE>null</END_DATE><CREATOR>5</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG><NAME>TripE</NAME></tuple>
+</TRIP>
+<LOCATION>
+<tuple><L_ID>1</L_ID><LONGITUDE>3</LONGITUDE><LATITUDE>2</LATITUDE><LOC_NAME>London</LOC_NAME><COUNTRY>United Kingdom</COUNTRY><STATE>null</STATE><CITY>London</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
+<tuple><L_ID>2</L_ID><LONGITUDE>5</LONGITUDE><LATITUDE>4</LATITUDE><LOC_NAME>Paris</LOC_NAME><COUNTRY>France</COUNTRY><STATE>null</STATE><CITY>Paris</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
+<tuple><L_ID>3</L_ID><LONGITUDE>175</LONGITUDE><LATITUDE>6</LATITUDE><LOC_NAME>New York</LOC_NAME><COUNTRY>United States of America</COUNTRY><STATE>NY</STATE><CITY>New York</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
+<tuple><L_ID>4</L_ID><LONGITUDE>7</LONGITUDE><LATITUDE>12</LATITUDE><LOC_NAME>San Francisco</LOC_NAME><COUNTRY>United States of America</COUNTRY><STATE>CA</STATE><CITY>San Francisco</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
+<tuple><L_ID>5</L_ID><LONGITUDE>20</LONGITUDE><LATITUDE>15</LATITUDE><LOC_NAME>Chicago</LOC_NAME><COUNTRY>United States of America</COUNTRY><STATE>IL</STATE><CITY>Chicago</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
+</LOCATION>
+<ALBUM>
+<tuple><A_ID>1</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>Album1</NAME><CREATOR>1</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG></tuple>
+<tuple><A_ID>2</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>My Fun Album</NAME><CREATOR>2</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG></tuple>
+<tuple><A_ID>3</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>A Cool Trip</NAME><CREATOR>3</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG></tuple>
+<tuple><A_ID>4</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>Fun Trip</NAME><CREATOR>4</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG></tuple>
+<tuple><A_ID>5</A_ID><TIME>2014-11-15 22:44:17.0</TIME><NAME>This trip sucked</NAME><CREATOR>5</CREATOR><PRIVACY_FLAG>0</PRIVACY_FLAG></tuple>
+</ALBUM>
+<INVITE_TRIP>
+<tuple><T_ID>1</T_ID><INVITED_USERS>2</INVITED_USERS><INVITED_BY>1</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>1</T_ID><INVITED_USERS>3</INVITED_USERS><INVITED_BY>1</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>2</T_ID><INVITED_USERS>4</INVITED_USERS><INVITED_BY>2</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>2</T_ID><INVITED_USERS>5</INVITED_USERS><INVITED_BY>3</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>3</T_ID><INVITED_USERS>6</INVITED_USERS><INVITED_BY>3</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>3</T_ID><INVITED_USERS>7</INVITED_USERS><INVITED_BY>4</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>4</T_ID><INVITED_USERS>8</INVITED_USERS><INVITED_BY>4</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>4</T_ID><INVITED_USERS>7</INVITED_USERS><INVITED_BY>5</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+<tuple><T_ID>5</T_ID><INVITED_USERS>5</INVITED_USERS><INVITED_BY>6</INVITED_BY><ACCEPTED>0</ACCEPTED></tuple>
+</INVITE_TRIP>
+<ALBUM_SHARE_TRIP>
+<tuple><A_ID>1</A_ID><T_ID>1</T_ID><TIME>2014-11-15 23:04:42.0</TIME><SHARED_BY>1</SHARED_BY></tuple>
+<tuple><A_ID>2</A_ID><T_ID>2</T_ID><TIME>2014-11-15 23:05:09.0</TIME><SHARED_BY>2</SHARED_BY></tuple>
+<tuple><A_ID>3</A_ID><T_ID>3</T_ID><TIME>2014-11-15 23:06:52.0</TIME><SHARED_BY>3</SHARED_BY></tuple>
+<tuple><A_ID>4</A_ID><T_ID>4</T_ID><TIME>2014-11-15 23:06:52.0</TIME><SHARED_BY>4</SHARED_BY></tuple>
+<tuple><A_ID>5</A_ID><T_ID>5</T_ID><TIME>2014-11-15 23:06:52.0</TIME><SHARED_BY>5</SHARED_BY></tuple>
+</ALBUM_SHARE_TRIP>
+<GROUPS>
+<tuple><G_ID>1</G_ID><NAME>Travel Group A</NAME><PRIVACY_FLAG>null</PRIVACY_FLAG><CREATOR>1</CREATOR></tuple>
+</GROUPS>
+<TRIP_AFFILIATED_GROUPS>
+<tuple><T_ID>1</T_ID><G_ID>1</G_ID></tuple>
+</TRIP_AFFILIATED_GROUPS>
+<USER_INTEREST>
+<tuple><I_ID>1</I_ID><U_ID>1</U_ID></tuple>
+<tuple><I_ID>2</I_ID><U_ID>2</U_ID></tuple>
+<tuple><I_ID>3</I_ID><U_ID>3</U_ID></tuple>
+<tuple><I_ID>4</I_ID><U_ID>4</U_ID></tuple>
+<tuple><I_ID>5</I_ID><U_ID>5</U_ID></tuple>
+<tuple><I_ID>6</I_ID><U_ID>6</U_ID></tuple>
+<tuple><I_ID>7</I_ID><U_ID>7</U_ID></tuple>
+<tuple><I_ID>7</I_ID><U_ID>8</U_ID></tuple>
+</USER_INTEREST>
+<INTEREST>
+<tuple><I_ID>1</I_ID><INTEREST_NAME>shopping</INTEREST_NAME></tuple>
+<tuple><I_ID>2</I_ID><INTEREST_NAME>traveling</INTEREST_NAME></tuple>
+<tuple><I_ID>3</I_ID><INTEREST_NAME>sleeping</INTEREST_NAME></tuple>
+<tuple><I_ID>4</I_ID><INTEREST_NAME>reading</INTEREST_NAME></tuple>
+<tuple><I_ID>5</I_ID><INTEREST_NAME>watching movies</INTEREST_NAME></tuple>
+<tuple><I_ID>6</I_ID><INTEREST_NAME>hiking</INTEREST_NAME></tuple>
+<tuple><I_ID>7</I_ID><INTEREST_NAME>swimming</INTEREST_NAME></tuple>
+</INTEREST>
+<PHOTO_SHARE_TRIP>
+</PHOTO_SHARE_TRIP>
+<COMMENTS_POST>
+</COMMENTS_POST>
+<TEXT_POST>
+</TEXT_POST>
+<RATE_LOCATION>
+</RATE_LOCATION>
+<PHOTO_SHARE_GROUP>
+</PHOTO_SHARE_GROUP>
+<USERS_IN_GROUPS>
+</USERS_IN_GROUPS>
+<COMMENTS_PHOTO>
+</COMMENTS_PHOTO>
+<LIKE_PHOTO>
+</LIKE_PHOTO>
+<ALBUM_SHARE_GROUP>
+</ALBUM_SHARE_GROUP>
 </database>

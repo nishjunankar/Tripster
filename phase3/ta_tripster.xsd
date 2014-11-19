@@ -20,11 +20,11 @@
 		</xs:key>
 
       <xs:keyref name="friendRef" refer="userId">
-      	<xs:selector xpath="user"/>
-      	<xs:field xpath="friend"/>
+      	<xs:selector xpath="user/friend"/>
+      	<xs:field xpath="."/>
       </xs:keyref>
 	  <xs:keyref name="inviteTripRef" refer="userId">
-      	<xs:selector xpath="user/trip/invite"/>
+      	<xs:selector xpath="user/invite"/>
       	<xs:field xpath="friendid"/>
       </xs:keyref>
       <xs:keyref name="rateContentRef" refer="contentId">
@@ -41,8 +41,8 @@
       	<xs:field xpath="tripid"/>
       </xs:keyref>
 	  <xs:keyref name="dreamLocationRef" refer="locationId">
-      	<xs:selector xpath="user"/>
-      	<xs:field xpath="dream"/>
+      	<xs:selector xpath="user/dream"/>
+      	<xs:field xpath="."/>
       </xs:keyref>
     </xs:element>
 
@@ -56,7 +56,7 @@
 	<xs:simpleType name="privacyClass">
 	  <xs:restriction base="xs:string">
 	    <xs:enumeration value="private" />
-	    <xs:enumeration value="sharedWithTripMemebers" />
+	    <xs:enumeration value="sharedWithTripMembers" />
 		<xs:enumeration value="public" />
 	  </xs:restriction>
 	</xs:simpleType>
@@ -112,7 +112,6 @@
         <xs:element name="privacyFlag" type="privacyClass"></xs:element>
         <xs:element name="album" type="albumType" minOccurs="0" maxOccurs="unbounded"></xs:element>
         <xs:element name="location" type="locationType" minOccurs="0" maxOccurs="unbounded"></xs:element>
-		<xs:element name="invite" type="inviteType" minOccurs="0" maxOccurs="unbounded"></xs:element>
       </xs:sequence>
     </xs:complexType>
     
