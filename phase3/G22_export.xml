@@ -1,6 +1,6 @@
 <database>
 	<GROUPS>
-		<tuple><G_ID>1</G_ID><NAME>Travel Group A</NAME><PRIVACY_FLAG>null</PRIVACY_FLAG></tuple>
+		<tuple><G_ID>1</G_ID><NAME>Travel Group A</NAME><PRIVACY_FLAG>null</PRIVACY_FLAG><CREATOR>1</CREATOR></tuple>
 	</GROUPS>
 	<LOCATION>
 		<tuple><L_ID>1</L_ID><LONGITUDE>3</LONGITUDE><LATITUDE>2</LATITUDE><LOC_NAME>London</LOC_NAME><COUNTRY>United Kingdom</COUNTRY><STATE>null</STATE><CITY>London</CITY><LOCATION_TYPE>city</LOCATION_TYPE></tuple>
