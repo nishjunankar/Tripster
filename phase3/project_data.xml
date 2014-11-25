@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
+<tripster >
     <operator>CIS550</operator>
     <web_url>www.cis550tripster.com</web_url>
     <user>
@@ -7,7 +7,7 @@
         <email>lawson@upenn.com</email>
         <name>Lawson</name>
         <affiliation>Penn</affiliation>
-        <interests>Hiking</interests>
+        <interests>1</interests>
         <friend>gsn</friend>
         <trip>
             <id>1</id>
@@ -105,7 +105,7 @@
         <email>goodson@penn.edu</email>
         <name>Goodson</name>
         <affiliation>Penn</affiliation>
-        <interests>Biking</interests>
+        <interests>2</interests>
         <friend>bsn</friend>
         <friend>lsn</friend>
         <trip>
@@ -159,7 +159,7 @@
         <email>badson@bad.com</email>
         <name>Badson</name>
         <affiliation>Drexel</affiliation>
-        <interests>Running</interests>
+        <interests>9</interests>
         <friend>gsn</friend>
         <trip>
             <id>3</id>
@@ -212,7 +212,7 @@
         <email>spicy@food.com</email>
         <name>Wasaba</name>
         <affiliation>JHU</affiliation>
-        <interests>Eating</interests>
+        <interests>11</interests>
         <friend>nna</friend>
         <trip>
             <id>5</id>
@@ -265,7 +265,7 @@
         <email>nana@nana.edu</email>
         <name>Nana</name>
         <affiliation>PHD</affiliation>
-        <interests>Learning</interests>
+        <interests>12</interests>
         <friend>wsb</friend>
     </user>
     <user>
@@ -273,7 +273,7 @@
         <email>fanzyland2004@gmail.com</email>
         <name>Zhouying Fan</name>
         <affiliation>Upenn</affiliation>
-        <interests>Travel</interests>
+        <interests>7</interests>
         <friend>peng1@seas.upenn.edu</friend>
         <friend>liyan6@seas.upenn.edu</friend>
         <friend>terrycui0811@gmail.com</friend>
@@ -281,7 +281,7 @@
         <trip>
             <id>100</id>
             <name>Japan Trip</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>sharedWithTripMembers</privacyFlag>
             <album>
                 <id>1</id>
@@ -376,12 +376,12 @@
         <email>peng1@seas.upenn.edu</email>
         <name>Yi Peng</name>
         <affiliation>Upenn</affiliation>
-        <interests>Fashion</interests>
+        <interests>14</interests>
         <friend>fanzyland2004@gmail.com</friend>
         <trip>
             <id>400</id>
             <name>Hawaii Trip</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>4</id>
@@ -426,7 +426,7 @@
         <trip>
             <id>500</id>
             <name>San Francisco</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>5</id>
@@ -496,12 +496,12 @@
         <email>liyan6@seas.upenn.edu</email>
         <name>Yan Li</name>
         <affiliation>Upenn</affiliation>
-        <interests>Sports</interests>
+        <interests>4</interests>
         <friend>fanzyland2004@gmail.com</friend>
         <trip>
             <id>301</id>
             <name>China Trip</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>3</id>
@@ -551,12 +551,12 @@
         <email>terrycui0811@gmail.com</email>
         <name>Taorui Cui</name>
         <affiliation>Upenn</affiliation>
-        <interests>Eating</interests>
+        <interests>11</interests>
         <friend>fanzyland2004@gmail.com</friend>
         <trip>
             <id>208</id>
             <name>Mexico Trip</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>sharedWithTripMembers</privacyFlag>
             <album>
                 <id>2</id>
@@ -606,7 +606,7 @@
         <email>guaguaer01@gmail.com</email>
         <name>Guagua Er</name>
         <affiliation>Upenn</affiliation>
-        <interests>null</interests>
+        <interests>16</interests>
         <friend>fanzyland2004@gmail.com</friend>
     </user>
     <user>
@@ -614,7 +614,7 @@
         <email>vinay@upenn.edu</email>
         <name>Vinay Londhe</name>
         <affiliation>Penn</affiliation>
-        <interests>Studying Databases</interests>
+        <interests>15</interests>
         <friend>barack@upenn.edu</friend>
         <friend>pierre@upenn.edu</friend>
         <friend>sandesh@upenn.edu</friend>
@@ -674,7 +674,7 @@
         <email>brad@upenn.edu</email>
         <name>Brad Palchesko</name>
         <affiliation>Penn</affiliation>
-        <interests>Studying Databases</interests>
+        <interests>15</interests>
         <friend>barack@upenn.edu</friend>
         <friend>pierre@upenn.edu</friend>
         <friend>sandesh@upenn.edu</friend>
@@ -736,7 +736,7 @@
         <email>sandesh@upenn.edu</email>
         <name>Sandesh Kumar</name>
         <affiliation>Penn</affiliation>
-        <interests>Studying Databases</interests>
+        <interests>15</interests>
         <friend>brad@upenn.edu</friend>
         <friend>pierre@upenn.edu</friend>
         <friend>vinay@upenn.edu</friend>
@@ -781,7 +781,7 @@
         <email>pierre@upenn.edu</email>
         <name>Pierre Rohel</name>
         <affiliation>Penn</affiliation>
-        <interests>Studying Databases</interests>
+        <interests>15</interests>
         <friend>brad@upenn.edu</friend>
         <friend>sandesh@upenn.edu</friend>
         <friend>vinay@upenn.edu</friend>
@@ -807,7 +807,7 @@
         <email>barack@upenn.edu</email>
         <name>Barack Obama</name>
         <affiliation>Penn</affiliation>
-        <interests>Studying Databases</interests>
+        <interests>15</interests>
         <friend>brad@upenn.edu</friend>
         <friend>vinay@upenn.edu</friend>
         <rateContent>
@@ -826,12 +826,12 @@
         <email>rohit.dureja@gmail.com</email>
         <name>Rohit</name>
         <affiliation>Academic</affiliation>
-        <interests>NULL</interests>
+        <interests>16</interests>
         <friend>rohit.dureja</friend>
         <trip>
             <id>4001</id>
             <name>Goa</name>
-            <feature>NULL</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>1</id>
@@ -870,19 +870,19 @@
             </album>
             <location>
                 <name>Goa</name>
-                <type>NULL</type>
+                <type>16</type>
             </location>
         </trip>
         <rateTrip>
             <tripid>1</tripid>
             <score>4</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateContent>
             <contentid>1</contentid>
             <contentSource>G05</contentSource>
             <score>0</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>1</tripid>
@@ -900,12 +900,12 @@
         <email>durejarahul1810@gmail.com</email>
         <name>Rahul</name>
         <affiliation>Academic</affiliation>
-        <interests>NULL</interests>
+        <interests>16</interests>
         <friend>durejarahul1810</friend>
         <trip>
             <id>4003</id>
             <name>NewZealand</name>
-            <feature>NULL</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>3</id>
@@ -944,19 +944,19 @@
             </album>
             <location>
                 <name>NewZealand</name>
-                <type>NULL</type>
+                <type>16</type>
             </location>
         </trip>
         <rateTrip>
             <tripid>1</tripid>
             <score>5</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateContent>
             <contentid>1</contentid>
             <contentSource>G05</contentSource>
             <score>0</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>1</tripid>
@@ -974,12 +974,12 @@
         <email>sibiv@seas.upenn.edu</email>
         <name>Sibi</name>
         <affiliation>Academic</affiliation>
-        <interests>NULL</interests>
+        <interests>16</interests>
         <friend>sibi</friend>
         <trip>
             <id>4002</id>
             <name>Singapore</name>
-            <feature>NULL</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>2</id>
@@ -1018,14 +1018,14 @@
             </album>
             <location>
                 <name>Singapore</name>
-                <type>NULL</type>
+                <type>16</type>
             </location>
         </trip>
         <rateContent>
             <contentid>1</contentid>
             <contentSource>G05</contentSource>
             <score>0</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>1</tripid>
@@ -1043,12 +1043,12 @@
         <email>avinashr@seas.upenn.edu</email>
         <name>Avinash</name>
         <affiliation>Academic</affiliation>
-        <interests>NULL</interests>
+        <interests>16</interests>
         <friend>Avinash</friend>
         <trip>
             <id>4005</id>
             <name>Goa</name>
-            <feature>NULL</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>5</id>
@@ -1087,14 +1087,14 @@
             </album>
             <location>
                 <name>Switzerland</name>
-                <type>NULL</type>
+                <type>16</type>
             </location>
         </trip>
         <rateContent>
             <contentid>1</contentid>
             <contentSource>G05</contentSource>
             <score>0</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>1</tripid>
@@ -1112,12 +1112,12 @@
         <email>rgulati@seas.upenn.edu</email>
         <name>Rishabh</name>
         <affiliation>Academic</affiliation>
-        <interests>NULL</interests>
+        <interests>16</interests>
         <friend>rgulati</friend>
         <trip>
             <id>5004</id>
             <name>Switzerland</name>
-            <feature>NULL</feature>
+            <feature>16</feature>
             <privacyFlag>private</privacyFlag>
             <album>
                 <id>4</id>
@@ -1156,19 +1156,19 @@
             </album>
             <location>
                 <name>europe</name>
-                <type>NULL</type>
+                <type>16</type>
             </location>
         </trip>
         <rateTrip>
             <tripid>1</tripid>
             <score>3</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateContent>
             <contentid>1</contentid>
             <contentSource>G05</contentSource>
             <score>0</score>
-            <comment>NULL</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>1</tripid>
@@ -1186,7 +1186,7 @@
         <email />
         <name>davo</name>
         <affiliation>student</affiliation>
-        <interests>Hiking</interests>
+        <interests>1</interests>
         <friend>kevinmu01</friend>
         <trip>
             <id>109</id>
@@ -1684,7 +1684,7 @@
                     <id>18</id>
                     <source>G22</source>
                     <type>photo</type>
-                    <url>http://www.telegraph.co.uk/travel/destination/article129429.ece/ALTERNATES/w620/venicetravelguide5.jpg</url>
+                    <url>http://www.telegraph.co.uk/7/destination/article129429.ece/ALTERNATES/w620/venice7guide5.jpg</url>
                 </content>
                 <content>
                     <id>19</id>
@@ -1814,7 +1814,7 @@
     </user>
     <user>
         <login>molisani</login>
-        <email>null@email.com</email>
+        <email>16@email.com</email>
         <name>Michael Molisani</name>
         <affiliation>None</affiliation>
         <interests>None</interests>
@@ -1822,7 +1822,7 @@
         <trip>
             <id>91</id>
             <name>First Time to Paris</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>4</id>
@@ -1875,7 +1875,7 @@
         <trip>
             <id>203</id>
             <name>Tours of Prague</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>1</id>
@@ -1920,7 +1920,7 @@
         <trip>
             <id>5350</id>
             <name>Spring Breakers</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
@@ -1930,7 +1930,7 @@
                     <id>10</id>
                     <source>G00</source>
                     <type>photo</type>
-                    <url>http://www.purpletravel.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_PurpleTravel_11.jpg</url>
+                    <url>http://www.purple7.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_Purple7_11.jpg</url>
                 </content>
                 <content>
                     <id>11</id>
@@ -1961,7 +1961,7 @@
     </user>
     <user>
         <login>mmorant</login>
-        <email>null@email.com</email>
+        <email>16@email.com</email>
         <name>Max Morant</name>
         <affiliation>None</affiliation>
         <interests>None</interests>
@@ -1969,7 +1969,7 @@
         <trip>
             <id>28</id>
             <name>Tours of Prague</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>1</id>
@@ -2014,7 +2014,7 @@
         <trip>
             <id>57</id>
             <name>Spring Breakers</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
@@ -2024,7 +2024,7 @@
                     <id>710</id>
                     <source>G00</source>
                     <type>photo</type>
-                    <url>http://www.purpletravel.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_PurpleTravel_11.jpg</url>
+                    <url>http://www.purple7.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_Purple7_11.jpg</url>
                 </content>
                 <content>
                     <id>711</id>
@@ -2055,14 +2055,14 @@
     </user>
     <user>
         <login>brown</login>
-        <email>null@email.com</email>
+        <email>16@email.com</email>
         <name>Rachel Brown</name>
         <affiliation>None</affiliation>
         <interests>None</interests>
         <trip>
             <id>59</id>
             <name>Spring Breakers</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
@@ -2072,7 +2072,7 @@
                     <id>101</id>
                     <source>G00</source>
                     <type>photo</type>
-                    <url>http://www.purpletravel.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_PurpleTravel_11.jpg</url>
+                    <url>http://www.purple7.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_Purple7_11.jpg</url>
                 </content>
                 <content>
                     <id>111</id>
@@ -2103,7 +2103,7 @@
     </user>
     <user>
         <login>weiss</login>
-        <email>null@email.com</email>
+        <email>16@email.com</email>
         <name>Emily Weiss</name>
         <affiliation>None</affiliation>
         <interests>None</interests>
@@ -2113,7 +2113,7 @@
         <trip>
             <id>555</id>
             <name>Spring Breakers</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
@@ -2123,7 +2123,7 @@
                     <id>210</id>
                     <source>G00</source>
                     <type>photo</type>
-                    <url>http://www.purpletravel.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_PurpleTravel_11.jpg</url>
+                    <url>http://www.purple7.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_Purple7_11.jpg</url>
                 </content>
                 <content>
                     <id>211</id>
@@ -2154,14 +2154,14 @@
     </user>
     <user>
         <login>mommaweiss</login>
-        <email>null@email.com</email>
+        <email>16@email.com</email>
         <name>Momma Weiss</name>
         <affiliation>None</affiliation>
         <interests>None</interests>
         <trip>
             <id>503</id>
             <name>Spring Breakers</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
@@ -2171,7 +2171,7 @@
                     <id>310</id>
                     <source>G00</source>
                     <type>photo</type>
-                    <url>http://www.purpletravel.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_PurpleTravel_11.jpg</url>
+                    <url>http://www.purple7.co.uk/images/destinations/462-Cape_Verde/Cape_Verde_Cheap_holidays_with_Purple7_11.jpg</url>
                 </content>
                 <content>
                     <id>311</id>
@@ -2205,7 +2205,7 @@
         <email>AAllen@yahoo.com</email>
         <name>Andrew Allen</name>
         <affiliation>Penn</affiliation>
-        <interests>cycling, hiking</interests>
+        <interests>2,1</interests>
         <friend>TooMuchTuna</friend>
         <friend>FSpagMon</friend>
         <trip>
@@ -2239,7 +2239,7 @@
                     <id>4</id>
                     <source>G23</source>
                     <type>photo</type>
-                    <url>http://media.expedia.com/media/content/shared/images/travelguides/destination/178288/Montreal-48957.jpg</url>
+                    <url>http://media.expedia.com/media/content/shared/images/7guides/destination/178288/Montreal-48957.jpg</url>
                 </content>
                 <content>
                     <id>5</id>
@@ -2278,13 +2278,13 @@
             <contentid>2</contentid>
             <contentSource>group23</contentSource>
             <score>5</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateContent>
         <rateContent>
             <contentid>5</contentid>
             <contentSource>group23</contentSource>
             <score>1</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>2</tripid>
@@ -2312,7 +2312,7 @@
         <email>ttully@amazon.com</email>
         <name>Tina Tully</name>
         <affiliation>Microsoft</affiliation>
-        <interests>skiing, swimming</interests>
+        <interests>skiing,3</interests>
         <friend>andrew_82</friend>
         <friend>l33tuser</friend>
         <trip>
@@ -2340,7 +2340,7 @@
                     <id>8</id>
                     <source>G23</source>
                     <type>photo</type>
-                    <url>http://graphics8.nytimes.com/images/2011/07/03/travel/03checkin_span/03checkin_span-articleLarge.jpg</url>
+                    <url>http://graphics8.nytimes.com/images/2011/07/03/7/03checkin_span/03checkin_span-articleLarge.jpg</url>
                 </content>
                 <content>
                     <id>9</id>
@@ -2373,13 +2373,13 @@
         <rateTrip>
             <tripid>5</tripid>
             <score>1</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateContent>
             <contentid>3</contentid>
             <contentSource>group23</contentSource>
             <score>5</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateContent>
         <rateContent>
             <contentid>19</contentid>
@@ -2412,7 +2412,7 @@
         <email>kimK4Ever@gmail.com</email>
         <name>Kim Kardashian</name>
         <affiliation>Google</affiliation>
-        <interests>jogging, rock climbing</interests>
+        <interests>9,rock climbing</interests>
         <friend>FSpagMon</friend>
         <trip>
             <id>309</id>
@@ -2433,7 +2433,7 @@
                     <id>12</id>
                     <source>G23</source>
                     <type>photo</type>
-                    <url>http://www.bargaintravel4u.co.uk/assets/kerala-holidays_2.jpg</url>
+                    <url>http://www.bargain74u.co.uk/assets/kerala-holidays_2.jpg</url>
                 </content>
                 <content>
                     <id>13</id>
@@ -2466,7 +2466,7 @@
         <rateTrip>
             <tripid>3</tripid>
             <score>5</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateTrip>
             <tripid>4</tripid>
@@ -2483,13 +2483,13 @@
             <contentid>12</contentid>
             <contentSource>group23</contentSource>
             <score>3</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateContent>
         <rateContent>
             <contentid>13</contentid>
             <contentSource>group23</contentSource>
             <score>3</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateContent>
         <request>
             <tripid>4</tripid>
@@ -2508,7 +2508,7 @@
         <email>dillmon@gmail.com</email>
         <name>Jared Dillon</name>
         <affiliation>Autodesk</affiliation>
-        <interests>trekking, swimming</interests>
+        <interests>trekking,3</interests>
         <friend>andrew_82</friend>
         <friend>KimKardash</friend>
         <trip>
@@ -2542,7 +2542,7 @@
                     <id>19</id>
                     <source>G23</source>
                     <type>photo</type>
-                    <url>http://www.travelingmyself.com/wp-content/uploads/2013/09/Facts-About-Turkey-Country-Demre-in-Antalya-600x450.jpg</url>
+                    <url>http://www.7ingmyself.com/wp-content/uploads/2013/09/Facts-About-Turkey-Country-Demre-in-Antalya-600x450.jpg</url>
                 </content>
                 <content>
                     <id>20</id>
@@ -2559,7 +2559,7 @@
         <rateTrip>
             <tripid>1</tripid>
             <score>1</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateTrip>
             <tripid>3</tripid>
@@ -2603,7 +2603,7 @@
         <email>angelV12@hotmail.com</email>
         <name>Angel Viera</name>
         <affiliation>MIT</affiliation>
-        <interests>coding, running, jogging</interests>
+        <interests>10,9,9</interests>
         <friend>TooMuchTuna</friend>
         <trip>
             <id>535</id>
@@ -2618,7 +2618,7 @@
                     <id>21</id>
                     <source>G23</source>
                     <type>photo</type>
-                    <url>http://www.anpc.com/wp-content/uploads/2012/10/antarctica-travel-holiday-wallpapers_88.jpg</url>
+                    <url>http://www.anpc.com/wp-content/uploads/2012/10/antarctica-7-holiday-wallpapers_88.jpg</url>
                 </content>
                 <content>
                     <id>22</id>
@@ -2653,7 +2653,7 @@
         <rateTrip>
             <tripid>2</tripid>
             <score>4</score>
-            <comment>null</comment>
+            <comment>16</comment>
         </rateTrip>
         <rateTrip>
             <tripid>5</tripid>
@@ -2695,7 +2695,7 @@
         <email>superman@gmail.com</email>
         <name>Steve Jobs</name>
         <affiliation>Apple Inc.</affiliation>
-        <interests>soccer, swimming</interests>
+        <interests>soccer,3</interests>
         <friend>batman</friend>
         <friend>donquixote</friend>
         <trip>
@@ -2770,7 +2770,7 @@
         <email>spiderman@gmail.com</email>
         <name>Bill Gates</name>
         <affiliation>Microsoft Inc.</affiliation>
-        <interests>hiking, soccer, basketball</interests>
+        <interests>1,soccer,basketball</interests>
         <friend>musketeers</friend>
         <trip>
             <id>286</id>
@@ -2844,7 +2844,7 @@
         <email>batman@gmail.com</email>
         <name>Larry Pages</name>
         <affiliation>Google Inc.</affiliation>
-        <interests>biking, swimming</interests>
+        <interests>2,3</interests>
         <friend>superman</friend>
         <trip>
             <id>38</id>
@@ -2871,7 +2871,7 @@
                     <id>13</id>
                     <source>G28</source>
                     <type>photo</type>
-                    <url>http://www.alaska-travel.net/Alaska-slides/fullsize/Alaska-Railroad.jpg</url>
+                    <url>http://www.alaska-7.net/Alaska-slides/fullsize/Alaska-Railroad.jpg</url>
                 </content>
                 <content>
                     <id>14</id>
@@ -2911,7 +2911,7 @@
         <email>musketeers</email>
         <name>Peter Thiel</name>
         <affiliation>Y Combinator</affiliation>
-        <interests>jogging, football</interests>
+        <interests>9,football</interests>
         <friend>spiderman</friend>
         <trip>
             <id>49</id>
@@ -3538,7 +3538,7 @@
         <email>jp</email>
         <name>Josh</name>
         <affiliation>Penn</affiliation>
-        <interests>Hiking, Camping</interests>
+        <interests>1,Camping</interests>
         <friend>ls</friend>
         <friend>tt</friend>
         <trip>
@@ -3614,7 +3614,7 @@
         <email>ls</email>
         <name>Lexi</name>
         <affiliation>Penn</affiliation>
-        <interests>Swiming</interests>
+        <interests>3</interests>
         <friend>jp</friend>
         <friend>rc</friend>
         <trip>
@@ -4044,7 +4044,7 @@
         <email>masonje@wharton.upenn.edu</email>
         <name>Jack Mason</name>
         <affiliation>Lambda Chi Alpha</affiliation>
-        <interests>Fraternities, ritualism</interests>
+        <interests>Fraternities,ritualism</interests>
         <trip>
             <id>511</id>
             <name>LXA</name>
@@ -4052,7 +4052,7 @@
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
-                <name>Stouffer's Travels</name>
+                <name>Stouffer's 7s</name>
                 <privacyFlag>public</privacyFlag>
                 <content>
                     <id>21</id>
@@ -4133,7 +4133,7 @@
                     <id>11</id>
                     <source>group20</source>
                     <type>photo</type>
-                    <url>https://militarytravelexchange.com/blog/wp-content/uploads/2014/03/Guam-Beach.jpg</url>
+                    <url>https://military7exchange.com/blog/wp-content/uploads/2014/03/Guam-Beach.jpg</url>
                 </content>
                 <content>
                     <id>12</id>
@@ -4181,7 +4181,7 @@
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>4</id>
-                <name>Stouffer's Travels</name>
+                <name>Stouffer's 7s</name>
                 <privacyFlag>public</privacyFlag>
                 <content>
                     <id>16</id>
@@ -4358,7 +4358,7 @@
             </album>
             <location>
                 <name>Liberty Bell</name>
-                <type>null</type>
+                <type>16</type>
             </location>
             <location>
                 <name>San Diego, CA</name>
@@ -4629,7 +4629,7 @@
         <email>bpitt@gmail.com</email>
         <name>Brad Pitt</name>
         <affiliation>screen actors guild</affiliation>
-        <interests>acting, fighting, being cool</interests>
+        <interests>acting,fighting,being cool</interests>
         <friend>bossypants</friend>
         <friend>jackson5</friend>
         <friend>tMoney</friend>
@@ -4746,7 +4746,7 @@
                     <id>5</id>
                     <source>group09</source>
                     <type>photo</type>
-                    <url>http://thepalladiantraveler.files.wordpress.com/2013/02/la-dolce-vita-vatican-overlook.jpg</url>
+                    <url>http://thepalladian7er.files.wordpress.com/2013/02/la-dolce-vita-vatican-overlook.jpg</url>
                 </content>
                 <content>
                     <id>6</id>
@@ -4875,7 +4875,7 @@
         <email>tMoney@gmail.com</email>
         <name>Alan Turing</name>
         <affiliation>University Of Cambridge</affiliation>
-        <interests>mathematics, long walks in the park</interests>
+        <interests>18,19</interests>
         <friend>angie4eva</friend>
         <friend>bossypants</friend>
         <friend>jackson5</friend>
@@ -5002,15 +5002,15 @@
     </user>
     <user>
         <login>anh3</login>
-        <email>null</email>
+        <email>16</email>
         <name>Anh</name>
         <affiliation>Penn</affiliation>
-        <interests>null</interests>
+        <interests>16</interests>
         <friend>4</friend>
         <trip>
             <id>65</id>
             <name>Anh Birthday</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>5</id>
@@ -5057,15 +5057,15 @@
     </user>
     <user>
         <login>hua4</login>
-        <email>null</email>
+        <email>16</email>
         <name>Hua</name>
         <affiliation>Penn</affiliation>
-        <interests>null</interests>
+        <interests>16</interests>
         <friend>6</friend>
         <trip>
             <id>154</id>
             <name>Boys Vacation</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>4</id>
@@ -5110,10 +5110,10 @@
     </user>
     <user>
         <login>laura5</login>
-        <email>null</email>
+        <email>16</email>
         <name>Laura</name>
         <affiliation>FSU</affiliation>
-        <interests>null</interests>
+        <interests>16</interests>
         <friend>3</friend>
         <rateContent>
             <contentid>1</contentid>
@@ -5129,15 +5129,15 @@
     </user>
     <user>
         <login>andre6</login>
-        <email>null</email>
+        <email>16</email>
         <name>Andre</name>
         <affiliation>Ripple</affiliation>
-        <interests>null</interests>
+        <interests>16</interests>
         <friend>5</friend>
         <trip>
             <id>83</id>
             <name>Anniversary</name>
-            <feature>null</feature>
+            <feature>16</feature>
             <privacyFlag>public</privacyFlag>
             <album>
                 <id>3</id>
@@ -5173,10 +5173,10 @@
     </user>
     <user>
         <login>john1</login>
-        <email>null</email>
+        <email>16</email>
         <name>John</name>
         <affiliation>none</affiliation>
-        <interests>default</interests>
+        <interests>16</interests>
         <friend>2</friend>
         <friend>4</friend>
         <trip>
@@ -5192,45 +5192,45 @@
                     <id>1</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>6</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>7</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>8</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>9</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
             </album>
             <location>
                 <name>Las Vegas, CA, USA</name>
-                <type>null</type>
+                <type>16</type>
             </location>
         </trip>
     </user>
     <user>
         <login>tom2</login>
-        <email>null</email>
+        <email>16</email>
         <name>Tom</name>
         <affiliation>none</affiliation>
-        <interests>default</interests>
+        <interests>16</interests>
         <friend>4</friend>
         <trip>
             <id>832</id>
@@ -5245,45 +5245,45 @@
                     <id>2</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>17</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>23</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>24</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>25</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
             </album>
             <location>
                 <name>California</name>
-                <type>null</type>
+                <type>16</type>
             </location>
         </trip>
     </user>
     <user>
         <login>derrick3</login>
-        <email>null</email>
+        <email>16</email>
         <name>Derrick</name>
         <affiliation>none</affiliation>
-        <interests>default</interests>
+        <interests>16</interests>
         <trip>
             <id>391</id>
             <name>default name</name>
@@ -5297,45 +5297,45 @@
                     <id>4</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>13</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>14</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>15</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>16</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
             </album>
             <location>
                 <name>New York City</name>
-                <type>null</type>
+                <type>16</type>
             </location>
         </trip>
     </user>
     <user>
         <login>rose4</login>
-        <email>null</email>
+        <email>16</email>
         <name>Rose</name>
         <affiliation>none</affiliation>
-        <interests>default</interests>
+        <interests>16</interests>
         <friend>3</friend>
         <trip>
             <id>414</id>
@@ -5350,45 +5350,45 @@
                     <id>18</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>19</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>20</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>21</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>22</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
             </album>
             <location>
                 <name>Canada</name>
-                <type>null</type>
+                <type>16</type>
             </location>
         </trip>
     </user>
     <user>
         <login>rod5</login>
-        <email>null</email>
+        <email>16</email>
         <name>Rod</name>
         <affiliation>none</affiliation>
-        <interests>default</interests>
+        <interests>16</interests>
         <trip>
             <id>541</id>
             <name>default name</name>
@@ -5402,36 +5402,36 @@
                     <id>3</id>
                     <source>G14</source>
                     <type>video</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>5</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>10</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>11</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
                 <content>
                     <id>12</id>
                     <source>G14</source>
                     <type>photo</type>
-                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-eating-strawberry.jpg</url>
+                    <url>http://www.acuteaday.com/blog/wp-content/uploads/2012/03/adorable-hamster-11-strawberry.jpg</url>
                 </content>
             </album>
             <location>
                 <name>Texas</name>
-                <type>null</type>
+                <type>16</type>
             </location>
         </trip>
     </user>
@@ -5440,7 +5440,7 @@
         <email>beheaded@yahoo.com</email>
         <name>Ned Stark</name>
         <affiliation>Starks</affiliation>
-        <interests>hiking</interests>
+        <interests>1</interests>
         <friend>serial</friend>
         <trip>
             <id>1001</id>
@@ -5568,7 +5568,7 @@
         <email>serial@yahoo.com</email>
         <name>Dexter Morgan</name>
         <affiliation>Miami</affiliation>
-        <interests>jogging</interests>
+        <interests>9</interests>
         <friend>jill</friend>
         <trip>
             <id>1002</id>
@@ -5688,7 +5688,7 @@
         <email>jill@gmail.com</email>
         <name>Jill Hill</name>
         <affiliation>Penn</affiliation>
-        <interests>swimming</interests>
+        <interests>3</interests>
         <friend>profx</friend>
     </user>
     <user>
@@ -5696,7 +5696,7 @@
         <email>profx@gmail.com</email>
         <name>Charles Xavier</name>
         <affiliation>X-men</affiliation>
-        <interests>movie</interests>
+        <interests>7</interests>
         <friend>underhill</friend>
         <request>
             <tripid>3</tripid>
@@ -5708,7 +5708,7 @@
         <email>underhill@shire.com</email>
         <name>Frodo Baggins</name>
         <affiliation>Fellowship of the Ring</affiliation>
-        <interests>sailing</interests>
+        <interests>8</interests>
         <friend>beheaded</friend>
         <trip>
             <id>1003</id>
@@ -5774,7 +5774,7 @@
         <email>david@gmail.com</email>
         <name>David</name>
         <affiliation>upenn</affiliation>
-        <interests>hiking</interests>
+        <interests>1</interests>
         <friend>1</friend>
         <trip>
             <id>11002</id>
@@ -5852,7 +5852,7 @@
         <email>Daniel@gmail.com</email>
         <name>Daniel</name>
         <affiliation>hello</affiliation>
-        <interests>hiking</interests>
+        <interests>1</interests>
         <friend>2</friend>
         <trip>
             <id>2001</id>
@@ -5916,7 +5916,7 @@
         <email>karl@gmail.com</email>
         <name>Karl</name>
         <affiliation>cmu</affiliation>
-        <interests>hiking</interests>
+        <interests>1</interests>
         <trip>
             <id>377</id>
             <name>Philadelphia</name>
@@ -5978,7 +5978,7 @@
         <email>kate@gmail.com</email>
         <name>Kate</name>
         <affiliation>stanford</affiliation>
-        <interests>swiming</interests>
+        <interests>3</interests>
         <friend>5</friend>
         <trip>
             <id>498</id>
@@ -6032,7 +6032,7 @@
         <email>Jessica@seas.upenn.edu</email>
         <name>Jessica</name>
         <affiliation>Upenn</affiliation>
-        <interests>swiming</interests>
+        <interests>3</interests>
         <friend>4</friend>
         <trip>
             <id>574</id>
@@ -6091,7 +6091,7 @@
         <email>matt@upenn.edu</email>
         <name>Matt Stagitis</name>
         <affiliation>Penn</affiliation>
-        <interests>Sports, Traveling, Reading</interests>
+        <interests>4,5,6</interests>
         <friend>Patrick123</friend>
         <friend>Vineet</friend>
         <friend>mdamle</friend>
@@ -6157,7 +6157,7 @@
         <email>patrick@upenn.edu</email>
         <name>Patrick Kearney</name>
         <affiliation>Penn</affiliation>
-        <interests>Sports, Traveling, Reading</interests>
+        <interests>4,5,6</interests>
         <friend>Vineet</friend>
         <friend>mdamle</friend>
         <friend>Matt123</friend>
@@ -6223,7 +6223,7 @@
         <email>mdamle@seas.upenn.edu</email>
         <name>Manashree Damle</name>
         <affiliation>Penn</affiliation>
-        <interests>Sports, Traveling, Reading</interests>
+        <interests>4,5,6</interests>
         <friend>Matt123</friend>
         <friend>Patrick123</friend>
         <trip>
@@ -6287,7 +6287,7 @@
         <email>vineet@upenn.edu</email>
         <name>Vineet Unknown</name>
         <affiliation>Penn</affiliation>
-        <interests>Sports, Traveling, Reading</interests>
+        <interests>4,5,6</interests>
         <friend>Matt123</friend>
         <friend>Patrick123</friend>
         <trip>
@@ -6309,13 +6309,13 @@
                     <id>18</id>
                     <source>group19</source>
                     <type>photo</type>
-                    <url>http://atlastravel.s3.amazonaws.com/sitehomepics/australiamainharbour.jpg</url>
+                    <url>http://atlas7.s3.amazonaws.com/sitehomepics/australiamainharbour.jpg</url>
                 </content>
                 <content>
                     <id>19</id>
                     <source>group19</source>
                     <type>photo</type>
-                    <url>http://www.primarktravelhouse.com/images/australia-images/australia-tourist-map.gif</url>
+                    <url>http://www.primark7house.com/images/australia-images/australia-tourist-map.gif</url>
                 </content>
                 <content>
                     <id>20</id>
@@ -6400,7 +6400,7 @@
         <email>sanika@upenn.edu</email>
         <name>Sanika Fakename</name>
         <affiliation>Penn</affiliation>
-        <interests>Sports, Traveling, Reading</interests>
+        <interests>4,5,6</interests>
         <dream>Yosemite</dream>
     </user>
     <user>
@@ -6627,7 +6627,7 @@
                     <id>518</id>
                     <source>G22</source>
                     <type>photo</type>
-                    <url>http://www.telegraph.co.uk/travel/destination/article129429.ece/ALTERNATES/w620/venicetravelguide5.jpg</url>
+                    <url>http://www.telegraph.co.uk/7/destination/article129429.ece/ALTERNATES/w620/venice7guide5.jpg</url>
                 </content>
                 <content>
                     <id>519</id>
