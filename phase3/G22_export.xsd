@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="database">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GROUPS"/>
+        <xs:element ref="LOCATION"/>
+        <xs:element ref="TRIP"/>
+        <xs:element ref="ALBUM"/>
+        <xs:element ref="COMMENTS"/>
+        <xs:element ref="ALBUM_SHARE_GROUP"/>
+        <xs:element ref="TRIP_AFFILIATED_GROUPS"/>
+        <xs:element ref="USERS"/>
+        <xs:element ref="PHOTO"/>
+        <xs:element ref="FRIENDS_WITH"/>
+        <xs:element ref="LIKE_PHOTO"/>
+        <xs:element ref="COMMENTS_PHOTO"/>
+        <xs:element ref="USERS_IN_GROUPS"/>
+        <xs:element ref="PHOTO_SHARE_GROUP"/>
+        <xs:element ref="INVITE_TRIP"/>
+        <xs:element ref="RATE_LOCATION"/>
+        <xs:element ref="INTEREST"/>
+        <xs:element ref="USER_INTEREST"/>
+        <xs:element ref="TEXT_POST"/>
+        <xs:element ref="COMMENTS_POST"/>
+        <xs:element ref="PHOTO_SHARE_TRIP"/>
+        <xs:element ref="ALBUM_SHARE_TRIP"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GROUPS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TRIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ALBUM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="COMMENTS">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="ALBUM_SHARE_GROUP">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="TRIP_AFFILIATED_GROUPS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="USERS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PHOTO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FRIENDS_WITH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LIKE_PHOTO">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="COMMENTS_PHOTO">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="USERS_IN_GROUPS">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="PHOTO_SHARE_GROUP">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="INVITE_TRIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RATE_LOCATION">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="INTEREST">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="USER_INTEREST">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="TEXT_POST">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="COMMENTS_POST">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="PHOTO_SHARE_TRIP">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="ALBUM_SHARE_TRIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tuple">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="U_ID"/>
+          <xs:element ref="PASSWORD_HASH"/>
+          <xs:element ref="FIRST_NAME"/>
+          <xs:element ref="LAST_NAME"/>
+          <xs:element ref="EMAIL"/>
+          <xs:element ref="FB_ID"/>
+          <xs:element ref="AFFILIATION"/>
+        </xs:sequence>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="P_ID"/>
+          <xs:element ref="URL"/>
+          <xs:element ref="PUBLISHED_BY"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="A_ID"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="L_ID"/>
+          <xs:element ref="LONGITUDE"/>
+          <xs:element ref="LATITUDE"/>
+          <xs:element ref="LOC_NAME"/>
+          <xs:element ref="COUNTRY"/>
+          <xs:element ref="STATE"/>
+          <xs:element ref="CITY"/>
+          <xs:element ref="LOCATION_TYPE"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="T_ID"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="LOCATION"/>
+          <xs:element ref="START_DATE"/>
+          <xs:element ref="END_DATE"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="TIME"/>
+        <xs:choice minOccurs="0">
+          <xs:element ref="SHARED_BY"/>
+          <xs:sequence>
+            <xs:element ref="FRIEND"/>
+            <xs:element ref="OTHER_FRIEND"/>
+          </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="INVITED_USERS"/>
+            <xs:element ref="INVITED_BY"/>
+            <xs:element ref="ACCEPTED"/>
+          </xs:sequence>
+        </xs:choice>
+        <xs:element minOccurs="0" ref="G_ID"/>
+        <xs:element minOccurs="0" ref="NAME"/>
+        <xs:element minOccurs="0" ref="CREATOR"/>
+        <xs:element minOccurs="0" ref="PRIVACY_FLAG"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="U_ID" type="xs:integer"/>
+  <xs:element name="PASSWORD_HASH" type="xs:NCName"/>
+  <xs:element name="FIRST_NAME" type="xs:NCName"/>
+  <xs:element name="LAST_NAME" type="xs:NCName"/>
+  <xs:element name="EMAIL" type="xs:string"/>
+  <xs:element name="FB_ID" type="xs:NCName"/>
+  <xs:element name="AFFILIATION" type="xs:NCName"/>
+  <xs:element name="P_ID" type="xs:integer"/>
+  <xs:element name="URL" type="xs:string"/>
+  <xs:element name="PUBLISHED_BY" type="xs:integer"/>
+  <xs:element name="A_ID" type="xs:integer"/>
+  <xs:element name="L_ID" type="xs:integer"/>
+  <xs:element name="LONGITUDE" type="xs:integer"/>
+  <xs:element name="LATITUDE" type="xs:integer"/>
+  <xs:element name="LOC_NAME" type="xs:string"/>
+  <xs:element name="COUNTRY" type="xs:string"/>
+  <xs:element name="STATE" type="xs:NCName"/>
+  <xs:element name="CITY" type="xs:string"/>
+  <xs:element name="LOCATION_TYPE" type="xs:NCName"/>
+  <xs:element name="T_ID" type="xs:integer"/>
+  <xs:element name="START_DATE" type="xs:NCName"/>
+  <xs:element name="END_DATE" type="xs:NCName"/>
+  <xs:element name="TIME" type="xs:string"/>
+  <xs:element name="SHARED_BY" type="xs:integer"/>
+  <xs:element name="FRIEND" type="xs:integer"/>
+  <xs:element name="OTHER_FRIEND" type="xs:integer"/>
+  <xs:element name="INVITED_USERS" type="xs:integer"/>
+  <xs:element name="INVITED_BY" type="xs:integer"/>
+  <xs:element name="ACCEPTED" type="xs:integer"/>
+  <xs:element name="G_ID" type="xs:integer"/>
+  <xs:element name="NAME" type="xs:string"/>
+  <xs:element name="CREATOR" type="xs:integer"/>
+  <xs:element name="PRIVACY_FLAG" type="xs:NMTOKEN"/>
+  <xs:element name="LOCATION">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="tuple"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
