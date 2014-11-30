@@ -1,0 +1,1 @@
+sqlldr CONTROL=USERS.ctl   skip=0   

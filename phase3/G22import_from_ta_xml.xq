@@ -1,14 +1,13 @@
 let $friends_with_tuples := (
  for $user in doc ("project_data.xml")/tripster/user
-     return <FRIENDS_WITH>
-    {for $friend in $user/friend
+ for $friend in $user/friend
         return
             <tuple>
                 <FRIEND>{$user/login/text()}</FRIEND>
                 <OTHER_FRIEND>{$friend/text()}</OTHER_FRIEND>
             </tuple>
-    }
-    </FRIENDS_WITH>)
+            
+   )
     
 let $trip_tuples := (
     for $tripster in doc ("project_data.xml")/tripster
@@ -20,6 +19,7 @@ let $trip_tuples := (
                 <T_ID>{$trip/id/text()}</T_ID>
                 <LOCATION>{$trip/location/name/text()}</LOCATION>
                 <CREATOR>{$user/login/text()}</CREATOR>
+                <NAME>{$trip/name/text()}</NAME>
                 <PRIVACY_FLAG>{if($trip/PRIVACY_FLAG/text()="private"
                               or $trip/PRIVACY_FLAG/text()=1) then 1
                               else 0}</PRIVACY_FLAG>
@@ -34,7 +34,7 @@ for $tripster in doc ("project_data.xml")/tripster
     for $rateContent in $user/rateContent
     return <tuple>
         <U_ID>{$user/login/text()}</U_ID>
-        <P_ID>{$rateContent/contentid/text()}</P_ID>
+        <P_ID>{concat($rateContent/contentid/text(),$user/login)}</P_ID>
         <COMMENT_STRING>{$rateContent/comment/text()}</COMMENT_STRING>
     </tuple>
     }
@@ -71,10 +71,10 @@ for $user in doc("project_data.xml")/tripster/user
     for $content in $album/content
     return
     <tuple>
-        <P_ID>{$content/id/text()}</P_ID>
+        <P_ID>{concat($content/id/text(),$user/login)}</P_ID>
         <URL>{$content/url/text()}</URL>
         <PUBLISHED_BY>{$user/login/text()}</PUBLISHED_BY>
-        <A_ID>{$album/id/text()}</A_ID>
+        <A_ID>{concat($album/id/text(),$user/login)}</A_ID>
     </tuple>
 )
 
@@ -83,7 +83,7 @@ for $user in doc("project_data.xml")/tripster/user
     for $album in $user/trip/album
     return
     <tuple>
-        <A_ID>{$album/id/text()}</A_ID>
+        <A_ID>{concat($album/id/text(),$user/login)}</A_ID>
         <NAME>{$album/name/text()}</NAME>
         <CREATOR>{$user/login/text()}</CREATOR>
         <PRIVACY_FLAG>{if ($album/privacyFlag/text() = "private" or $album/privacyFlag = "1") then 1 else 0}</PRIVACY_FLAG>
@@ -92,13 +92,13 @@ for $user in doc("project_data.xml")/tripster/user
 
 let $invite_trip_tuples := (
 for $user in doc("project_data.xml")/tripster/user
-    for $request in $user/request
+    for $invite in $user/invite
     return
     <tuple>
-        <T_ID>{$request/tripid/text()}</T_ID>
-        <INVITED_ID>{$request/friendid/text()}</INVITED_ID>
+        <T_ID>{$invite/tripid/text()}</T_ID>
+        <INVITED_ID>{$invite/friendid/text()}</INVITED_ID>
         <INVITED_BY>{$user/login/text()}</INVITED_BY>
-        <ACCEPTED>{if ($request/status/text()="accepted") then 1 else 0}</ACCEPTED>
+        <ACCEPTED>{if ($invite/status/text()="accepted" or ($invite/status/text()='1')) then 1 else 0}</ACCEPTED>
     </tuple>
       
 )
@@ -111,6 +111,7 @@ for $user in doc("project_data.xml")/tripster/user
     <tuple>
         <A_ID>{$album/id/text()}</A_ID>
         <T_ID>{$trip/id/text()}</T_ID>
+        <SHARED_BY>{$user/login/text()}</SHARED_BY>
     </tuple>
 )
 
@@ -127,7 +128,7 @@ for $user in doc("project_data.xml")/tripster/user
 return 
 <database>
     <USERS>{$user_tuples}</USERS>
-    {$friends_with_tuples}
+    <FRIENDS_WITH>{$friends_with_tuples}</FRIENDS_WITH>
     <PHOTO>{$photo_tuples}</PHOTO>
     {$trip_tuples}
     {$location_tuples}
