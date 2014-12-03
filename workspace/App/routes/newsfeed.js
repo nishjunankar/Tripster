@@ -12,20 +12,22 @@ var oracle =  require("oracle");
 //
 // res = HTTP result object sent back to the client
 // name = Name to query for
-function query_db(res,name) {
+function query_db(res) {
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
     } else {
 	  	// selecting rows
-	  	connection.execute(construct_query_friends_photos('7'), 
+    	query = construct_query_friends_photos('7');
+    	console.log(query);
+	  	connection.execute(query, 
 	  			   [], 
 	  			   function(err, results) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
 	  	    	connection.close(); // done with the connection
-	  	    	output_actors(res, name, results);
+	  	    	output_newsfeed(res, results);
 	  	    }
 	
 	  	}); // end connection.execute
@@ -34,24 +36,23 @@ function query_db(res,name) {
 }
 
 function construct_query_friends_photos(uid) {
-	var query = "WITH FRIENDS AS ( " +
-		"SELECT FW.OTHER_FRIEND" +
-		"FROM Users u" +
-		"INNER JOIN Friends_With FW ON FW.Friend = U.u_id" +
-		"WHERE U.u_id = '"+ uid + "'" +
+	var query = "WITH FRIENDS AS ( \n" +
+		"SELECT FW.OTHER_FRIEND\n" +
+		"FROM Users u\n" +
+		"INNER JOIN Friends_With FW ON FW.Friend = U.u_id\n" +
+		"WHERE U.u_id = '"+ uid + "'\n" +
 		"" +
-		")," +
+		"),\n" +
 		"" +
-		"PHOTOS_BY_FRIENDS AS (" +
-		"SELECT P.PUBLISHED_BY, P.URL, P.TIME, A.Name, A.A_ID" +
-		"FROM PHOTO P" +
-		"INNER JOIN Friends F ON F.OTHER_FRIEND = P.PUBLISHED_BY" +
-		"INNER JOIN Album A ON A.A_ID = P.A_ID" +
-		")" +
-		"SELECT *" +
-		"FROM PHOTOS_BY_FRIENDS" +
-		"ORDER BY TIME DESC;";
-	console.log(query);
+		"PHOTOS_BY_FRIENDS AS (\n" +
+		"SELECT P.PUBLISHED_BY, P.URL, P.TIME, A.Name, A.A_ID\n" +
+		"FROM PHOTO P\n" +
+		"INNER JOIN Friends F ON F.OTHER_FRIEND = P.PUBLISHED_BY\n" +
+		"INNER JOIN Album A ON A.A_ID = P.A_ID\n" +
+		")\n" +
+		"SELECT *\n" +
+		"FROM PHOTOS_BY_FRIENDS\n" +
+		"ORDER BY TIME DESC";
 	return query;
 }
 /////
@@ -60,9 +61,9 @@ function construct_query_friends_photos(uid) {
 // res = HTTP result object sent back to the client
 // name = Name to query for
 // results = List object of query results
-function output_newsfeed(res,name,results) {
+function output_newsfeed(res,results) {
 	res.render('newsfeed.jade',
-		   { title: "Newsfeed for user " + name,
+		   { title: "Newsfeed for user ",
 		     results: results }
 	  );
 }
@@ -70,5 +71,5 @@ function output_newsfeed(res,name,results) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(res,req.query.name);
+	query_db(res);
 };
