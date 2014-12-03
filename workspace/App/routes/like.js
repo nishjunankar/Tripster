@@ -7,19 +7,18 @@ var connectData = {
   "database": "c450proj" };
 var oracle =  require("oracle");
 
-var uid = 'lsn';
 /////
 // Query the oracle database, and call output_actors on the results
 //
 // res = HTTP result object sent back to the client
 // name = Name to query for
-function query_db(res) {
+function query_db(res, uid, pid) {
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
     } else {
 	  	// selecting rows
-    	query = construct_query_friends_photos(uid);
+    	query = construct_query_like_photo(uid, pid);
     	console.log(query);
 	  	connection.execute(query, 
 	  			   [], 
@@ -28,8 +27,6 @@ function query_db(res) {
 	  	    	console.log(err);
 	  	    } else {
 	  	    	connection.close(); // done with the connection
-	  	    	console.log(results);
-	  	    	output_newsfeed(res, results);
 	  	    }
 	
 	  	}); // end connection.execute
@@ -37,31 +34,9 @@ function query_db(res) {
   }); // end oracle.connect
 }
 
-function construct_query_friends_photos(uid) {
-	var query = "WITH FRIENDS AS ( \n" +
-		"SELECT FW.OTHER_FRIEND\n" +
-		"FROM Users u\n" +
-		"INNER JOIN Friends_With FW ON FW.Friend = U.u_id\n" +
-		"WHERE U.u_id = '"+ uid + "'\n" +
-		"" +
-		"),\n" +
-		"" +
-		"PHOTOS_BY_FRIENDS AS (\n" +
-		"SELECT P.P_ID, P.PUBLISHED_BY, P.URL, TO_CHAR(P.TIMES, 'Month D HH12:MI PM') AS TIMES, A.Name, A.A_ID\n" +
-		"FROM PHOTO P\n" +
-		"INNER JOIN Friends F ON F.OTHER_FRIEND = P.PUBLISHED_BY\n" +
-		"INNER JOIN Album A ON A.A_ID = P.A_ID\n" +
-		"),\n" +
-		"LIKES AS (\n" +
-		"SELECT LP.P_ID AS L_P_ID, COUNT(LP.U_ID) AS LIKES\n" +
-		"FROM LIKE_PHOTO LP\n"+
-		"GROUP BY LP.P_ID\n"+
-		")\n"+
-		"SELECT *\n"+
-		"FROM PHOTOS_BY_FRIENDS PBF\n"+
-		"INNER JOIN Users U ON U.U_ID = PBF.PUBLISHED_BY\n" +
-		"LEFT JOIN LIKES L ON L.L_P_ID = PBF.P_ID\n"+
-		"ORDER BY TIMES DESC";
+function construct_query_like_photo(uid,pid) {
+	var query = "INSERT INTO LIKE_PHOTO " +
+		"VALUES ('" + uid + "', '" + pid + "')";
 	return query;
 }
 /////
@@ -73,13 +48,12 @@ function construct_query_friends_photos(uid) {
 function output_newsfeed(res,results) {
 	res.render('newsfeed.jade',
 		   { title: "Newsfeed for user ",
-		     photos: results,
-		     uid: uid}
+		     photos: results }
 	  );
 }
 
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(res);
+	query_db(res, req.query.uid, req.query.pid);
 };

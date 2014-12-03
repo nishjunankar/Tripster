@@ -11,6 +11,7 @@ var express = require('express')
   , routes = require('./routes')
   , actor = require('./routes/actor')
   , newsfeed = require('./routes/newsfeed')
+  , like = require('./routes/like')
   , http = require('http')
   , path = require('path')
   , stylus =  require("stylus")
@@ -32,6 +33,7 @@ app.get('/', routes.do_work);
 // when we get a request for {app/actor} we should call routes/actor.js
 app.get('/actor', actor.do_work);
 app.get('/newsfeed', newsfeed.do_work);
+app.get('/like', like.do_work);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){

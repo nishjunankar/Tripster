@@ -6,15 +6,21 @@ block content
     | #{title}:
   // Create a table with one row per result
   table
-    - for (var inx = 0; inx < results.length; inx++)
+    - for (var inx = 0; inx < photos.length; inx++)
+        - if(!photos[inx].LIKES) photos[inx].LIKES = '0'
         tr
           td
-            img(src=results[inx].URL)
+            img(src=photos[inx].URL)
           td &nbsp;
         tr
-          td=results[inx].PUBLISHED_BY
+          td 
+            span.caption=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME
+          td 
+            span.right_align= photos[inx].LIKES + " Likes"
+          td
+              a(href="/like?uid="+uid+"&pid="+photos[inx].P_ID) Like
         tr
-          td=results[inx].TIME
+          td=photos[inx].TIMES
   // Put a click button that lets us return to the index page 
   form(method='get', action='/')
       input(type='submit', value='Return')
