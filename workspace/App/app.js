@@ -10,10 +10,16 @@
 var express = require('express')
   , routes = require('./routes')
   , actor = require('./routes/actor')
+  , newsfeed = require('./routes/newsfeed')
   , http = require('http')
   , path = require('path')
   , stylus =  require("stylus")
   , nib =     require("nib")
+  , morgan = require("morgan")
+  , bodyParser = require("body-parser")
+  , favicon = require("favicon")
+  , methodOverride = require("method-override")
+  , errorHandler = require("errorhandler")
 ;
 
 // Initialize express
@@ -49,12 +55,15 @@ function init_app() {
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'jade');
 
-	app.use(express.favicon());
+//	app.use(favicon();
 	// Set the express logger: log to the console in dev mode
-	app.use(express.logger('dev'));
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(app.router);
+	app.use(morgan("dev"));
+	app.use(bodyParser.urlencoded({
+		extended: true
+	}));
+	app.use(bodyParser.json());
+	app.use(methodOverride());
+//	app.use(app.router);
 	// Use Stylus, which compiles .styl --> CSS
 	app.use(stylus.middleware(
 	  { src: __dirname + '/public'
@@ -65,7 +74,7 @@ function init_app() {
 
 	// development only
 	if ('development' == app.get('env')) {
-	  app.use(express.errorHandler());
+	  app.use(errorHandler());
 	}
 
 }
