@@ -5,6 +5,6 @@
 
 exports.do_work = function(req, res){
   res.render('index.jade', { 
-	  title: 'HW2' 
+	  title: 'Sign In' 
   });
 };

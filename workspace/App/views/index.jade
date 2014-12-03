@@ -5,7 +5,8 @@ extend layout
 // the user hits Submit
 block content
   p
-    | Please enter an actor last name:
+    | Account Name and Password:
     form(method='get', action='/actor')
-      input(name='name', value='')
+      input(name='userid', value='USERNAME')
+      input(type='password', value='PASSWORD')
       input(type='submit', value='Submit')

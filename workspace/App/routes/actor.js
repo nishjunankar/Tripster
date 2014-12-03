@@ -11,22 +11,22 @@ var oracle =  require("oracle");
 // Query the oracle database, and call output_actors on the results
 //
 // res = HTTP result object sent back to the client
-// name = Name to query for
-function query_db(res,name) {
+// userid = Name to query for
+function query_db(res,userid,password) {
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
     } else {
 	  	// selecting rows
-	  	connection.execute("SELECT * FROM users WHERE last_name='" + name + 
-	  			"' AND rownum <= 10", 
+	  	connection.execute("SELECT * FROM USERS U where U.U_ID = " + "'" + userid + "'" 
+	  		+ " and U.PASSWORD_HASH = " + "'" + password + "'", 
 	  			   [], 
 	  			   function(err, results) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
 	  	    	connection.close(); // done with the connection
-	  	    	output_actors(res, name, results);
+	  	    	output_actors(res, userid, results);
 	  	    }
 	
 	  	}); // end connection.execute
@@ -38,11 +38,11 @@ function query_db(res,name) {
 // Given a set of query results, output a table
 //
 // res = HTTP result object sent back to the client
-// name = Name to query for
+// userid = Name to query for
 // results = List object of query results
-function output_actors(res,name,results) {
+function output_actors(res,userid,results) {
 	res.render('actor.jade',
-		   { title: "Users with last name " + name,
+		   { title: "Hi " + userid,
 		     results: results }
 	  );
 }
@@ -50,5 +50,5 @@ function output_actors(res,name,results) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(res,req.query.name);
+	query_db(res,req.query.userid, req.query.password);
 };
