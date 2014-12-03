@@ -1,6 +1,7 @@
 // Connect string to Oracle
 var connectData = { 
-  "hostname": "tripster.cvng6l9rlc1v.us-east-1.rds.amazonaws.com:1521", 
+  "hostname": "tripster.cvng6l9rlc1v.us-east-1.rds.amazonaws.com",
+  "port": 1521,
   "user": "cis450", 
   "password": "cis4501234", 
   "database": "c450proj" };
@@ -17,8 +18,7 @@ function query_db(res,name) {
     	console.log(err);
     } else {
 	  	// selecting rows
-	  	connection.execute("SELECT * FROM users WHERE last_name='" + name + 
-	  			"' AND rownum <= 10", 
+	  	connection.execute(construct_query_friends_photos('7'), 
 	  			   [], 
 	  			   function(err, results) {
 	  	    if ( err ) {
@@ -38,7 +38,7 @@ function construct_query_friends_photos(uid) {
 		"SELECT FW.OTHER_FRIEND" +
 		"FROM Users u" +
 		"INNER JOIN Friends_With FW ON FW.Friend = U.u_id" +
-		"WHERE U.u_id = '7'" +
+		"WHERE U.u_id = '"+ uid + "'" +
 		"" +
 		")," +
 		"" +
@@ -50,8 +50,9 @@ function construct_query_friends_photos(uid) {
 		")" +
 		"SELECT *" +
 		"FROM PHOTOS_BY_FRIENDS" +
-		"ORDER BY TIME DESC;"
-	return query
+		"ORDER BY TIME DESC;";
+	console.log(query);
+	return query;
 }
 /////
 // Given a set of query results, output a table
@@ -59,9 +60,9 @@ function construct_query_friends_photos(uid) {
 // res = HTTP result object sent back to the client
 // name = Name to query for
 // results = List object of query results
-function output_actors(res,name,results) {
-	res.render('actor.jade',
-		   { title: "Users with last name " + name,
+function output_newsfeed(res,name,results) {
+	res.render('newsfeed.jade',
+		   { title: "Newsfeed for user " + name,
 		     results: results }
 	  );
 }

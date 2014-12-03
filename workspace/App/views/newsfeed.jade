@@ -8,11 +8,11 @@ block content
   table
     - for (var inx = 0; inx < results.length; inx++)
         tr
-          td=results[inx].FIRST_NAME+" "
+          td=results[inx].url+" "
           td &nbsp;
-          td=results[inx].LAST_NAME
+          td=results[inx].published_by
           td &nbsp;
-          td=results[inx].AFFILIATION
+          td=results[inx].time
   // Put a click button that lets us return to the index page 
   form(method='get', action='/')
       input(type='submit', value='Return')
