@@ -15,12 +15,34 @@ block content
         tr
           td 
             span.caption=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME
+        tr          
           td 
             span.right_align= photos[inx].LIKES + " Likes"
+        tr
           td
               a(href="/like?uid="+uid+"&pid="+photos[inx].P_ID) Like
         tr
           td=photos[inx].TIMES
+        tr
+          td.PostSeparatorOuter
+        tr
+          td.PostSeparatorInner
+        tr
+          td.PostSeparatorOuter      
+          
+  table
+    - for (var inx = 0; inx < trips.length; inx++)
+        tr
+          td=trips[inx].TRIP_NAME
+        tr
+          td 
+            span.location=trips[inx].LOCATION
+        tr
+          td.PostSeparatorOuter
+        tr
+          td.PostSeparatorInner
+        tr
+          td.PostSeparatorOuter
   // Put a click button that lets us return to the index page 
   form(method='get', action='/')
       input(type='submit', value='Return')
