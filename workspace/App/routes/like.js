@@ -13,6 +13,9 @@ var oracle =  require("oracle");
 // res = HTTP result object sent back to the client
 // name = Name to query for
 function query_db(res, uid, pid) {
+  // TODO: Ensure that uid is equal to the user id of the user, and if
+	// not do not let the like go through
+	
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
