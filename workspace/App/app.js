@@ -21,6 +21,8 @@ var express = require('express')
   , favicon = require("favicon")
   , methodOverride = require("method-override")
   , errorHandler = require("errorhandler")
+  , passport = require("passport")
+  , session = require('express-session')
 ;
 
 // Initialize express
@@ -74,7 +76,12 @@ function init_app() {
 	  }
 	));
 	app.use(express.static(path.join(__dirname, 'public')));
-
+	//saves the user session
+	app.use(session({
+  		secret: 'allyourbasearebelongtous',
+  		resave: false,
+  		saveUninitialized: true
+	}));
 	// development only
 	if ('development' == app.get('env')) {
 	  app.use(errorHandler());

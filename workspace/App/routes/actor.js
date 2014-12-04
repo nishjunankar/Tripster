@@ -12,21 +12,34 @@ var oracle =  require("oracle");
 //
 // res = HTTP result object sent back to the client
 // userid = Name to query for
-function query_db(res,userid,password) {
+function query_db(req,res,userid,password) {
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
     } else {
 	  	// selecting rows
-	  	connection.execute("SELECT * FROM USERS U where U.U_ID = " + "'" + userid + "'" 
-	  		+ " and U.PASSWORD_HASH = " + "'" + password + "'", 
+	  	connection.execute("SELECT * FROM USERS U WHERE U.U_ID = " + "'" + userid + "'", 
 	  			   [], 
 	  			   function(err, results) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
-	  	    	connection.close(); // done with the connection
-	  	    	output_actors(res, userid, results);
+	  	    	//if no query returned or wrong password
+	  	    	if (results.length < 1 || results[0].PASSWORD_HASH != password){
+	  	    		connection.close();
+	  	   			console.log("Wrong Username or Password");
+	  	   			res.render('index.jade', { 
+	  					title: 'Wrong Username or Password' 
+  					});
+	  	   		}
+	  	   		//else correct password
+	  	   		else{
+	  	   			req.session.uid = userid;
+	  	   			console.log(userid);
+					console.log(req.session.userid);
+	  	    		connection.close(); // done with the connection
+	  	    		output_actors(res, userid, results);
+	  	    	}
 	  	    }
 	
 	  	}); // end connection.execute
@@ -50,5 +63,5 @@ function output_actors(res,userid,results) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(res,req.query.userid, req.query.password);
+	query_db(req,res,req.query.userid, req.query.password);
 };

@@ -5,8 +5,17 @@ extend layout
 // the user hits Submit
 block content
   p
-    | Account Name and Password:
+    | Sign in:
     form(method='get', action='/actor')
       input(name='userid', value='USERNAME')
-      input(type='password', value='PASSWORD')
-      input(type='submit', value='Submit')
+      input(type='password', name='password', value='DEFAULT_PASSWORD')
+      input(type='submit', value='Log In')
+      
+    | Sign Up
+    form(method='get', action='/actor')
+      input(name='userid', value='USERNAME')
+      input(type='password', value='DEFAULT_PASSWORD')
+      input(name='firstname', value='First Name')
+      input(name='lastname', value='Last Name')
+      input(name='email', value='Email Address')
+      input(type='submit', value='Regiester')
