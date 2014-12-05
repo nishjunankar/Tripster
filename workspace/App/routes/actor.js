@@ -34,10 +34,14 @@ function query_db(req,res,userid,password) {
 	  	   		}
 	  	   		//else correct password
 	  	   		else{
-	  	   			req.session.uid = userid;
+	  	   			//Saves the user. Nish said to do this though
+	  	   			//thought it doesn't work.
+	  	   			req.session.user = userid;
 	  	   			console.log(userid);
-					console.log(req.session.userid);
+					//console.log(req.session.results);
 	  	    		connection.close(); // done with the connection
+	  	    		//THIS IS WHERE YOU SHOULD CALL YOUR FUNCTION
+	  	    		//YOU CAN REMOVE LINE OF CODE BELOW
 	  	    		output_actors(res, userid, results);
 	  	    	}
 	  	    }

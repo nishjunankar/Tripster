@@ -12,6 +12,7 @@ var express = require('express')
   , actor = require('./routes/actor')
   , newsfeed = require('./routes/newsfeed')
   , like = require('./routes/like')
+  , signup = require('./routes/signup')
   , http = require('http')
   , path = require('path')
   , stylus =  require("stylus")
@@ -34,6 +35,7 @@ init_app(app);
 app.get('/', routes.do_work);
 // when we get a request for {app/actor} we should call routes/actor.js
 app.get('/actor', actor.do_work);
+app.get('/signup', signup.do_work);
 app.get('/newsfeed', newsfeed.do_work);
 app.get('/like', like.do_work);
 
