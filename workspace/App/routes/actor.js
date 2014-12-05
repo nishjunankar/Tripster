@@ -36,6 +36,8 @@ function query_db(req,res,userid,password) {
 	  	   		else{
 	  	   			//Saves the user. Nish said to do this though
 	  	   			//thought it doesn't work.
+	  	   			//note dont save results[0] since this is not done
+	  	   			//in signup.js
 	  	   			req.session.user = userid;
 	  	   			console.log(userid);
 					//console.log(req.session.results);

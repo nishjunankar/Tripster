@@ -57,6 +57,7 @@ function insert_db(req,res,userid,password,firstname,lastname,email) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
+	  	    	req.session.user = userid;
 	  	    	console.log("Worked");
 	  	    	console.log(results);
 	  	    	connection.close(); // done with the connection
