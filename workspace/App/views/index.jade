@@ -7,15 +7,15 @@ block content
   p
     | Sign in:
     form(method='get', action='/actor')
-      input(name='userid', value='USERNAME')
+      input(name='userid', placeholder='Username')
       input(type='password', name='password', value='DEFAULT_PASSWORD')
       input(type='submit', value='Log In')
       
     | Sign Up
     form(method='get', action='/signup')
-      input(name='userid', value='USERNAME')
+      input(name='userid', placeholder='Username')
       input(type='password', name='password', value='DEFAULT_PASSWORD')
-      input(name='firstname', value='First Name')
-      input(name='lastname', value='Last Name')
-      input(name='email', value='Email Address')
+      input(name='firstname', placeholder='First Name')
+      input(name='lastname', placeholder='Last Name')
+      input(name='email', placeholder='Email Address')
       input(type='submit', value='Register')
