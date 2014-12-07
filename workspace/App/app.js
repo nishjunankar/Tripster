@@ -13,6 +13,7 @@ var express = require('express')
   , newsfeed = require('./routes/newsfeed')
   , like = require('./routes/like')
   , signup = require('./routes/signup')
+  , newsfeed_trips = require('./routes/newsfeed_trips')
   , http = require('http')
   , path = require('path')
   , stylus =  require("stylus")
@@ -37,6 +38,7 @@ app.get('/', routes.do_work);
 app.get('/actor', actor.do_work);
 app.get('/signup', signup.do_work);
 app.get('/newsfeed', newsfeed.do_work);
+app.get('/newsfeed_trips',newsfeed_trips.do_work);
 app.get('/like', like.do_work);
 
 // Listen on the port we specify

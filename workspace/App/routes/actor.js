@@ -39,12 +39,10 @@ function query_db(req,res,userid,password) {
 	  	   			//note dont save results[0] since this is not done
 	  	   			//in signup.js
 	  	   			req.session.user = userid;
-	  	   			console.log(userid);
-					//console.log(req.session.results);
 	  	    		connection.close(); // done with the connection
 	  	    		//THIS IS WHERE YOU SHOULD CALL YOUR FUNCTION
 	  	    		//YOU CAN REMOVE LINE OF CODE BELOW
-	  	    		output_actors(res, userid, results);
+	  	    		res.redirect('/newsfeed/');
 	  	    	}
 	  	    }
 	
