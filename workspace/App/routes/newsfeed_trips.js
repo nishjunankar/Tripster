@@ -19,7 +19,6 @@ function connect_and_query(query) {
 }
 
 function query_db(req, res) {
-  var trips = null;
   var uid = req.session.user;
   //console.log('querying db' + uid);
  
@@ -38,7 +37,6 @@ function query_db(req, res) {
 	  	    	res.redirect('/actor');
 	  	    } else {
 	  	    	connection.close(); // done with the connection
-	  	    	//trips = results;
 	  	    	console.log(results);
 	  	    	output_newsfeed(req, res, results);	  	    	
 	  	    }
