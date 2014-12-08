@@ -21,7 +21,7 @@ function connect_and_query(query) {
 function query_db(req, res) {
   var trips = null;
   var uid = req.session.user;
-  console.log('querying db' + uid);
+  //console.log('querying db' + uid);
  
   if (!uid) res.redirect('/actor');
   oracle.connect(connectData, function(err, connection) {
@@ -38,7 +38,7 @@ function query_db(req, res) {
 	  	    	res.redirect('/actor');
 	  	    } else {
 	  	    	connection.close(); // done with the connection
-	  	    	trips = results;
+	  	    	//trips = results;
 	  	    	console.log(results);
 	  	    	output_newsfeed(req, res, results);	  	    	
 	  	    }
@@ -94,7 +94,7 @@ function construct_query_friends_trips(uid) {
 // name = Name to query for
 // results = List object of query results
 function output_newsfeed(req, res,trips) {
-	console.log('in output');
+	//console.log('in output');
 	res.render('newsfeed_trips.jade',
 		   { title: "Newsfeed for user " + req.session.user,
 		     trips: trips,
@@ -105,7 +105,7 @@ function output_newsfeed(req, res,trips) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	console.log('in newsfeed');
+	//console.log('in newsfeed');
 	query_db(req, res);
 };
 

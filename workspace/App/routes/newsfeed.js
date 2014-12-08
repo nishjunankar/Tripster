@@ -51,7 +51,7 @@ function query_db(req, res) {
 
 
 function construct_query_friends_photos(uid) {
-	console.log('constructing');
+	//console.log('constructing');
 	var	query = "WITH FRIENDS AS ( \n";
 	query += "SELECT FW.OTHER_FRIEND, u.U_ID AS this_user\n";
 	query += "FROM Users u\n";
@@ -91,7 +91,7 @@ function construct_query_friends_photos(uid) {
 	query += "FROM FEED_PHOTOS FP\n";
 	query += "LEFT JOIN TOTAL_U_LIKE_F TULF ON TULF.user_id = FP.Published_by\n";
 	query += "ORDER BY TULF.totalULikeF DESC\n";
-	console.log("inq" +query);
+	//console.log("inq" +query);
 	return query;
 }
 /////
@@ -101,7 +101,7 @@ function construct_query_friends_photos(uid) {
 // name = Name to query for
 // results = List object of query results
 function output_newsfeed(req, res,photos) {
-	console.log('in output');
+	//console.log('in output');
 	res.render('newsfeed.jade',
 		   { title: "Newsfeed for user " + req.session.user,
 		     photos: photos,
@@ -112,6 +112,6 @@ function output_newsfeed(req, res,photos) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	console.log('in newsfeed');
+	//console.log('in newsfeed');
 	query_db(req, res);
 };

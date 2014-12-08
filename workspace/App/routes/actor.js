@@ -24,8 +24,17 @@ function query_db(req,res,userid,password) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
+	  	    	var bcrypt = require('bcrypt')
+	  	    	var salt = bcrypt.genSaltSync(10);
+				// Hash the password with the salt
+				var hash = bcrypt.hashSync(password, salt) + "";
+				//determines if the hashes are equal or for legacy if DEFAULT_PASSWORD is used
+				var equalsPassword = bcrypt.compareSync(password, results[0].PASSWORD_HASH) ||
+				(password == "DEFAULT_PASSWORD" && results[0].PASSWORD_HASH == "DEFAULT_PASSWORD"); // true
+				//console.log(equalsPassword);
+				//console.log(bcrypt.compareSync("hello", hash));
 	  	    	//if no query returned or wrong password
-	  	    	if (results.length < 1 || results[0].PASSWORD_HASH != password){
+	  	    	if (results.length < 1 || !equalsPassword){
 	  	    		connection.close();
 	  	   			console.log("Wrong Username or Password");
 	  	   			res.render('index.jade', { 

@@ -49,7 +49,12 @@ function insert_db(req,res,userid,password,firstname,lastname,email) {
     if ( err ) {
     	console.log(err);
     } else {
-    	var query = construct_query(userid,password,firstname,lastname,email);
+    	var bcrypt = require('bcrypt')
+	  	var salt = bcrypt.genSaltSync(10);
+		// Hash the password with the salt
+		var hash = bcrypt.hashSync(password, salt) + "";
+		//console.log(bcrypt.compareSync(password, hash)); // true);
+    	var query = construct_query(userid,hash,firstname,lastname,email);
 	  	// Inserting into db
 	  	connection.execute(query, 
 	  			   [], 
@@ -58,7 +63,7 @@ function insert_db(req,res,userid,password,firstname,lastname,email) {
 	  	    	console.log(err);
 	  	    } else {
 	  	    	req.session.user = userid;
-	  	    	console.log("Worked");
+	  	    	//console.log("Worked");
 	  	    	console.log(results);
 	  	    	connection.close(); // done with the connection
 	  	    	//THIS IS WHERE YOU SHOULD CALL YOUR FUNCTION
@@ -72,9 +77,9 @@ function insert_db(req,res,userid,password,firstname,lastname,email) {
 	
 }
 
-function construct_query(userid,password,firstname,lastname,email) {
+function construct_query(userid,hash,firstname,lastname,email) {
 	var query = "INSERT INTO USERS " +
-		"VALUES ('" + userid + "', '" + password + "', '" + firstname
+		"VALUES ('" + userid + "', '" + hash + "', '" + firstname
 		+ "', '" + lastname + "', '" + email + "', " +" null,null)";
 	return query;
 }
