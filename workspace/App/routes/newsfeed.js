@@ -35,7 +35,7 @@ function query_db(req, res) {
 	  			   function(err, results) {
 	  	    if ( err ) {
 	  	    	console.log(err);
-	  	    	res.redirect('/actor');
+	  	    	res.redirect('/');
 	  	    } else {
 	  	    	connection.close(); // done with the connection
 	  	    	photos = results;

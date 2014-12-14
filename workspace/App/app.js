@@ -25,6 +25,7 @@ var express = require('express')
   , errorHandler = require("errorhandler")
   , passport = require("passport")
   , session = require('express-session')
+  , http = require('http')
 ;
 
 // Initialize express
