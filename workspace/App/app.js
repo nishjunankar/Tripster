@@ -9,7 +9,7 @@
  */
 var express = require('express')
   , routes = require('./routes')
-  , actor = require('./routes/actor')
+  , login = require('./routes/login')
   , newsfeed = require('./routes/newsfeed')
   , like = require('./routes/like')
   , signup = require('./routes/signup')
@@ -34,8 +34,8 @@ init_app(app);
 
 // When we get a request for {app}/ we should call routes/index.js
 app.get('/', routes.do_work);
-// when we get a request for {app/actor} we should call routes/actor.js
-app.get('/actor', actor.do_work);
+// when we get a request for {app/login} we should call routes/login.js
+app.get('/login', login.do_work);
 app.get('/signup', signup.do_work);
 app.get('/newsfeed', newsfeed.do_work);
 app.get('/newsfeed_trips',newsfeed_trips.do_work);

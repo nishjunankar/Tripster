@@ -1,12 +1,12 @@
-// Basic Jade specification for querying for an actor
+// Basic Jade specification for querying for an login
 // Inherits from layout 
 extend layout
-// Then we produce a form that triggers /actor once
+// Then we produce a form that triggers /login once
 // the user hits Submit
 block content
   p
     | Sign in:
-    form(method='get', action='/actor')
+    form(method='get', action='/login')
       input(name='userid', placeholder='Username')
       input(type='password', name='password', placeholder='Password')
       input(type='submit', value='Log In')

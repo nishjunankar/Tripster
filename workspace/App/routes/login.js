@@ -60,21 +60,13 @@ function query_db(req,res,userid,password) {
   }); // end oracle.connect
 }
 
-/////
-// Given a set of query results, output a table
-//
-// res = HTTP result object sent back to the client
-// userid = Name to query for
-// results = List object of query results
-function output_actors(res,userid,results) {
-	res.render('actor.jade',
-		   { title: "Hi " + userid,
-		     results: results }
-	  );
-}
 
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(req,res,req.query.userid, req.query.password);
+	if(req.query.userid && req.query.password){
+		query_db(req,res,req.query.userid, req.query.password);
+	} else {
+		res.redirect("/");
+	}
 };
