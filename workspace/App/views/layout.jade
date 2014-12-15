@@ -6,7 +6,9 @@ html
   body
     header
       h1 #{title} - Tripster
-      a(href="/newsfeed") Newsfeed
+      a.newsfeed_link(href="/newsfeed") Newsfeed
+      br
+      a.logout_button(href="/logout") Sign Out
     .container
       .main-content
         block content

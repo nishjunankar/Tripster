@@ -36,6 +36,7 @@ init_app(app);
 app.get('/', routes.do_work);
 // when we get a request for {app/login} we should call routes/login.js
 app.get('/login', login.do_work);
+app.get('/logout', login.logout);
 app.get('/signup', signup.do_work);
 app.get('/newsfeed', newsfeed.do_work);
 app.get('/newsfeed_trips',newsfeed_trips.do_work);

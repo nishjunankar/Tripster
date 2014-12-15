@@ -70,3 +70,9 @@ exports.do_work = function(req, res){
 		res.redirect("/");
 	}
 };
+
+exports.logout = function(req, res){
+	req.session.user = null;
+	res.redirect("/");
+};
+
