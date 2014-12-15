@@ -12,5 +12,11 @@ block content
           td.user_aff=user_info[0].AFFILIATION
         tr
           td.user_email=user_info[0].EMAIL
+        tr
+          td.friendship
+            -if(is_friends)
+              span="Already Friends: Unfriend? (TODO)"
+            -else
+              span="Add Friend (TODO)" 
     
       

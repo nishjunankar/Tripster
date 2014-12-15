@@ -15,8 +15,6 @@ var oracle =  require("oracle");
 function query_db(res, user_data_query, is_friends_query) {
   // TODO: Ensure that uid is equal to the user id of the user, and if
 	// not do not let the like go through
-	console.log(user_data_query);
-	console.log(is_friends_query);
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
@@ -69,8 +67,13 @@ function get_user_page(res,page_uid, logged_in_uid) {
 	
 }
 
-
+// renders the user page 
 function output_user_page(res,user_info, is_friends) {
+	if (!is_friends[0]){
+		is_friends = 0;
+	} else{
+		is_friends = 1;
+	}
 	res.render('user.jade',
 		   { title: "User ",
 		     user_info: user_info,

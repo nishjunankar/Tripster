@@ -23,7 +23,9 @@ block content
           td 
             span.location="To " + trips[i].LOCATION
         tr
-          td=trips[i].FIRST_NAME + " " + trips[i].LAST_NAME + " is going"
+          td
+            a(href="/user/"+photos[inx].PUBLISHED_BY)
+              span=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME + " is going"
         tr
           td.dates="On " +trips[i].START_DATE.getMonth() + "/" + trips[i].START_DATE.getDate() + "/"+ trips[i].START_DATE.getFullYear()
 

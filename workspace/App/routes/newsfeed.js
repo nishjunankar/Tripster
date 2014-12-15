@@ -39,7 +39,6 @@ function query_db(req, res) {
 	  	    } else {
 	  	    	connection.close(); // done with the connection
 	  	    	photos = results;
-	  	    	console.log(results);
 	  	    	output_newsfeed(req, res, photos);	  	    	
 	  	    }
 	
@@ -51,7 +50,6 @@ function query_db(req, res) {
 
 
 function construct_query_friends_photos(uid) {
-	//console.log('constructing');
 	var	query = "WITH FRIENDS AS ( \n";
 	query += "SELECT FW.OTHER_FRIEND, u.U_ID AS this_user\n";
 	query += "FROM Users u\n";
@@ -91,7 +89,6 @@ function construct_query_friends_photos(uid) {
 	query += "FROM FEED_PHOTOS FP\n";
 	query += "LEFT JOIN TOTAL_U_LIKE_F TULF ON TULF.user_id = FP.Published_by\n";
 	query += "ORDER BY TULF.totalULikeF DESC\n";
-	//console.log("inq" +query);
 	return query;
 }
 /////
