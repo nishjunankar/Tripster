@@ -28,7 +28,6 @@ function query_db(res, user_data_query, is_friends_query) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
-	  	    	console.log(results);
 	  	    	var user_data = results
 	  	    	connection.close(); // done with the connection
 	  	    	oracle.connect(connectData, function(err, connection) {
@@ -56,11 +55,6 @@ function query_db(res, user_data_query, is_friends_query) {
   }); // end oracle.connect
 }
 
-function construct_query_like_photo(uid,pid) {
-	var query = "INSERT INTO LIKE_PHOTO " +
-		"VALUES ('" + uid + "', '" + pid + "')";
-	return query;
-}
 
 function get_user_page(res,page_uid, logged_in_uid) {
 	var user_data_query = "SELECT U.U_ID, U.FIRST_NAME, U.LAST_NAME, U.EMAIL, U.AFFILIATION \n";
@@ -74,14 +68,9 @@ function get_user_page(res,page_uid, logged_in_uid) {
 	query_db(res, user_data_query, is_friends_query);
 	
 }
-/////
-// Given a set of query results, output a table
-//
-// res = HTTP result object sent back to the client
-// name = Name to query for
-// results = List object of query results
+
+
 function output_user_page(res,user_info, is_friends) {
-	console.log(user_info);
 	res.render('user.jade',
 		   { title: "User ",
 		     user_info: user_info,

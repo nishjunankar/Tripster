@@ -16,7 +16,9 @@ block content
         tr
           td.PostSeparatorOuter  
         tr
-          td.photo_taker=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME
+          td.photo_taker
+            a(href="/user/"+photos[inx].PUBLISHED_BY)
+              span=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME
         tr
           td
             img(src=photos[inx].URL)
