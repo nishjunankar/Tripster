@@ -11,6 +11,7 @@ var express = require('express')
   , routes = require('./routes')
   , login = require('./routes/login')
   , newsfeed = require('./routes/newsfeed')
+  , user = require('./routes/user')
   , like = require('./routes/like')
   , signup = require('./routes/signup')
   , newsfeed_trips = require('./routes/newsfeed_trips')
@@ -41,6 +42,7 @@ app.get('/signup', signup.do_work);
 app.get('/newsfeed', newsfeed.do_work);
 app.get('/newsfeed_trips',newsfeed_trips.do_work);
 app.get('/like', like.do_work);
+app.get('/user/:uid', user.do_work);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
