@@ -95,7 +95,7 @@ function query_db_invited_users(req, res, photos, accepted_users) {
 }
 
 function query_db_trip(req, res, photos, accepted_users, invited_users) {
-	var query = "SELECT * FROM TRIP T WHERE T.T_ID = " + tid
+	var query = "SELECT TO_CHAR(start_date, 'Month D') AS start_date, TO_CHAR(end_date, 'Month D, YYYY') AS end_date, NAME, LOCATION, PRIVACY_FLAG, CREATOR FROM TRIP T WHERE T.T_ID = " + tid
 
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
