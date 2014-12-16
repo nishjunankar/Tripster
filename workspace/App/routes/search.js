@@ -107,7 +107,7 @@ function query_db(req,res,table,search) {
 	    		  	    	            res.render('actor.jade',{
 	    		  	    	              title: "Results for: " + search,
 		    		  	    		      results: results,
-		    		  	    		      uid = req.session.user} );
+		    		  	    		      uid: req.session.user} );
 	    		  	                    }
 	    			    	    }});
 	    			break;
