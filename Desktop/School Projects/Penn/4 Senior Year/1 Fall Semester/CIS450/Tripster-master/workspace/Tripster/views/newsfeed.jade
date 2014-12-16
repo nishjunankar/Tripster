@@ -4,12 +4,6 @@ extend layout
 block content
   p
     | #{title}:
-  a.nav_link(href='/my_trips') View My Trips
-  br
-  a.nav_link(href='/create_trip_form') Create Trip
-  br
-  a.nav_link(href='/pending_requests') Pending Requests
-  br
   // Create a table with one row per result
   a.nav_link(href='/newsfeed_trips') Trips Feed
   table
@@ -32,9 +26,6 @@ block content
         tr          
           td.num_likes 
             span.right_align= photos[inx].LIKES + " Likes"
-        tr          
-          td.view_comments
-            a(href="/photo/"+photos[inx].P_ID) View comments
         tr
           td.like_button
               a(href="/like?uid="+uid+"&pid="+photos[inx].P_ID) Like
@@ -45,4 +36,3 @@ block content
   // Put a click button that lets us return to the index page 
   form(method='get', action='/')
       input(type='submit', value='Return')
-      

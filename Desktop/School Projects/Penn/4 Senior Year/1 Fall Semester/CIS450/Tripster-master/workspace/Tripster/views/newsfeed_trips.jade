@@ -3,6 +3,8 @@
 // Jade file to specify output of an actors list
 // Inherits from layout
 extend layout
+.search
+  block search
 block content
   p
     | #{title}:
@@ -18,17 +20,12 @@ block content
         tr
           td.PostSeparatorOuter       
         tr
-          td.trip_name
-            a(href="/trip/"+trips[i].T_ID)
-              span=trips[i].TRIP_NAME
+          td.trip_name=trips[i].TRIP_NAME
         tr
           td 
             span.location="To " + trips[i].LOCATION
         tr
-          td
-            a(href="/user/"+trips[i].FRIEND)
-              span=trips[i].FIRST_NAME + " " + trips[i].LAST_NAME
-            span=" is going"
+          td=trips[i].FIRST_NAME + " " + trips[i].LAST_NAME + " is going"
         tr
           td.dates="On " +trips[i].START_DATE.getMonth() + "/" + trips[i].START_DATE.getDate() + "/"+ trips[i].START_DATE.getFullYear()
 

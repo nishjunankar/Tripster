@@ -30,7 +30,6 @@ function query_db(res, uid, pid) {
 	  	    	console.log(err);
 	  	    } else {
 	  	    	connection.close(); // done with the connection
-
 	  	    }
 	
 	  	}); // end connection.execute
@@ -60,5 +59,4 @@ function output_newsfeed(res,results) {
 // This is what's called by the main app 
 exports.do_work = function(req, res){
 	query_db(res, req.query.uid, req.query.pid);
-	res.redirect('back');
 };

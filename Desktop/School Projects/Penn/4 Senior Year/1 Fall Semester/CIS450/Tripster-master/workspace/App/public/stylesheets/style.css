@@ -122,9 +122,6 @@ header {
   border-bottom: 1px solid #4c0a0a;
   text-shadow: 0px -1px 0px #4c0a0a;
 }
-header a {
-  color: #fff;
-}
 td.PostSeparatorInner {
   height: 1px;
   background-color: #919191;
@@ -132,6 +129,11 @@ td.PostSeparatorInner {
 }
 td.PostSeparatorOuter {
   height: 10px;
+}
+.search {
+  width: 300px;
+  height: 300px;
+  float: right;
 }
 .container {
   width: 500px;
@@ -144,11 +146,6 @@ td.PostSeparatorOuter {
 }
 .main-content p {
   margin-bottom: 20px;
-}
-.search {
-  width: 300px;
-  height: 300px;
-  float: right;
 }
 .sidebar {
   float: left;

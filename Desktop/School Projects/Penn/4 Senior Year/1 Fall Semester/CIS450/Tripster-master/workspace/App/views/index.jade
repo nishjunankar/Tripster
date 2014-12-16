@@ -1,0 +1,22 @@
+// Basic Jade specification for querying for an login
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /login once
+// the user hits Submit
+block content
+  p
+    | Sign in:
+    form(method='get', action='/login')
+      input(name='userid', placeholder='Username')
+      input(type='password', name='password', placeholder='Password')
+      input(type='submit', value='Log In')
+      
+    | Sign Up
+    form(method='get', action='/signup')
+      input(name='userid', placeholder='Username')
+      input(type='password', name='password', placeholder='Password')
+      input(name='firstname', placeholder='First Name')
+      input(name='lastname', placeholder='Last Name')
+      input(name='email', placeholder='Email Address')
+      input(type='submit', value='Register')
+ 
