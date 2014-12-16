@@ -12,9 +12,8 @@ block content
           td &nbsp;
           td=results[inx].LAST_NAME
           td &nbsp;
-          td=form(method='get', action='/user/:uid', function(req, res){
-          					var uid = req.params.U_ID;})
-              input(type='submit', value = 'Visit Page')
+          td
+            a(href="/user/" + uid) Click Here to view profile
   // Put a click button that lets us return to the index page
                  
                  
