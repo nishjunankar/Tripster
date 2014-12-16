@@ -7,6 +7,10 @@ block content
     | Trip: #{trip[0].NAME} <br>
     | To: #{trip[0].LOCATION} <br>
     | Dates: #{trip[0].START_DATE + " - " + trip[0].END_DATE}
+    br
+    span="Created by: " 
+      a(href="/user/"+trip[0].CREATOR)
+        span=trip[0].CREATOR
     
   div.section_title="Accepted users:"
   table
@@ -24,21 +28,23 @@ block content
           td
             a(href="/user/"+invited_users[i].U_ID)
               span=invited_users[i].FIRST_NAME + " " + invited_users[i].LAST_NAME
-    tr
-      td.PostSeparatorOuter
-    tr
-      td.PostSeparatorInner
-    tr
-      td.PostSeparatorOuter  
-    tr
-      td 
-        a.nav_link(href='/invite_friend_form?tid='+trip.T_ID) Invite Friend
-    tr
-      td 
-        a.nav_link(href='/my_trips?uid='+uid) Add Photo
-    tr  
-      td 
-        a.nav_link(href='/my_trips?uid='+uid) Create Album
+    
+    - if (user_in_trip)
+      tr
+        td.PostSeparatorOuter
+      tr
+        td.PostSeparatorInner
+      tr
+        td.PostSeparatorOuter  
+      tr
+        td 
+          a.nav_link(href='/invite_friend_form?tid='+trip.T_ID) Invite Friend
+      tr
+        td 
+          a.nav_link(href='/my_trips?uid='+uid) Add Photo
+      tr  
+        td 
+          a.nav_link(href='/my_trips?uid='+uid) Create Album
     tr
       td.PostSeparatorOuter
     tr
