@@ -20,7 +20,7 @@ function query_db(req, res) {
 	  	// selecting rows
     	var query = "SELECT IT.INVITED_BY, IT.T_ID, FR.REQUESTED_BY " +
     			"FROM INVITE_TRIP IT FULL OUTER JOIN FRIEND_REQUESTS FR ON IT.INVITED_USERS = FR.REQUESTED_USERS WHERE " + 
-    		"IT.INVITED_USERS = " + uid.replace(/"/g, "'");
+    		"IT.INVITED_USERS = " + uid.replace(/"/g, "'") + " or FR.REQUESTED_USERS = " + uid.replace(/"/g, "'");
     	console.log(query);
 	  	connection.execute(query, 
 	  			   [], 
