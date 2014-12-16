@@ -1,3 +1,4 @@
+
 doctype html
 html
   head
@@ -9,6 +10,16 @@ html
       a.newsfeed_link(href="/newsfeed") Newsfeed
       br
       a.logout_button(href="/logout") Sign Out
+      p
+        form(method='get', action='/search')
+         select(name='table')
+           option(value='users') Users
+           option(value='photos') Photos
+           option(value='albums') Albums
+           option(value='trips') Trips
+           option(value='locations') Locations
+         input(name='search', placeholder='Search')
+         input(type='submit', value='Go!')
     .container
       .main-content
         block content
