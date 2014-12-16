@@ -1,0 +1,17 @@
+// Jade file to specify output of an actors list
+// Inherits from layout
+extend layout
+block content
+  p
+    | #{title}:
+  table(style='width:600px')
+    for trip in trips
+      tr
+        td= trip.NAME
+        td 
+          a.nav_link(href='/invite_friend_form?tid='+trip.T_ID) Invite Friend
+        td 
+          a.nav_link(href='/my_trips?uid='+uid) Add Photo
+        td 
+          a.nav_link(href='/my_trips?uid='+uid) Create Album
+    

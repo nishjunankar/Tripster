@@ -1,0 +1,17 @@
+extend layout
+block content
+  p
+    | Create Trip:
+    form(method='get', action='/create_trip')
+      input(name='location', placeholder='Location')
+      input(name='start_date', placeholder='Start date, 01-FEB-14')
+      input(name='end_date', placeholder='END date, 14-FEB-14')
+      input(name='name', placeholder='Name')
+      select(name='privacy')
+        option(value='0') Public
+        option(value='1') Private
+        option(value='2') Shared with trip members
+      input(type='hidden', name='tid', value=tid)
+      input(type='hidden', name='uid', value=uid)
+      input(type='hidden', name='gid', value=gid)
+      input(type='submit', value='Create')

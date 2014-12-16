@@ -4,6 +4,12 @@ extend layout
 block content
   p
     | #{title}:
+  a.nav_link(href='/my_trips') View My Trips
+  br
+  a.nav_link(href='/create_trip_form') Create Trip
+  br
+  a.nav_link(href='/pending_requests') Pending Requests
+  br
   // Create a table with one row per result
   a.nav_link(href='/newsfeed_trips') Trips Feed
   table

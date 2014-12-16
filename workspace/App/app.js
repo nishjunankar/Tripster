@@ -15,6 +15,12 @@ var express = require('express')
   , like = require('./routes/like')
   , signup = require('./routes/signup')
   , newsfeed_trips = require('./routes/newsfeed_trips')
+  , create_trip = require('./routes/create_trip')
+  , create_trip_form = require('./routes/create_trip_form')
+  , my_trips = require('./routes/my_trips')
+  , invite_friend = require('./routes/invite_friend')
+  , invite_friend_form = require('./routes/invite_friend_form')
+  , pending_requests = require('./routes/pending_requests')
   , http = require('http')
   , path = require('path')
   , stylus =  require("stylus")
@@ -43,7 +49,12 @@ app.get('/newsfeed', newsfeed.do_work);
 app.get('/newsfeed_trips',newsfeed_trips.do_work);
 app.get('/like', like.do_work);
 app.get('/user/:uid', user.do_work);
-
+app.get('/create_trip', create_trip.do_work);
+app.get('/create_trip_form', create_trip_form.do_work);
+app.get('/my_trips', my_trips.do_work);
+app.get('/invite_friend', invite_friend.do_work);
+app.get('/invite_friend_form', invite_friend_form.do_work);
+app.get('/pending_requests', pending_requests.do_work);
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
