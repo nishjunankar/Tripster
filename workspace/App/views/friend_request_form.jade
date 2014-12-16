@@ -1,0 +1,9 @@
+extend layout
+block content
+  p
+    form(method='get', action='/friend_request')
+      |Friend Username: 
+      input(name='fuid')
+      br
+      br
+      input(type='submit', value='Send Request')
