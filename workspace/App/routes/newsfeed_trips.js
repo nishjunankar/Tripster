@@ -22,7 +22,7 @@ function query_db(req, res) {
   var uid = req.session.user;
   //console.log('querying db' + uid);
  
-  if (!uid) res.redirect('/actor');
+  if (!uid) res.redirect('/');
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
@@ -34,7 +34,7 @@ function query_db(req, res) {
 	  			   function(err, results) {
 	  	    if ( err ) {
 	  	    	console.log(err);
-	  	    	res.redirect('/actor');
+	  	    	res.redirect('/');
 	  	    } else {
 	  	    	connection.close(); // done with the connection
 	  	    	console.log(results);
