@@ -26,6 +26,9 @@ block content
         tr          
           td.num_likes 
             span.right_align= photos[inx].LIKES + " Likes"
+        tr          
+          td.view_comments
+            a(href="/photo/"+photos[inx].P_ID) View comments
         tr
           td.like_button
               a(href="/like?uid="+uid+"&pid="+photos[inx].P_ID) Like

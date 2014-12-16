@@ -1,0 +1,55 @@
+// Jade file to specify output of an actors list
+// Inherits from layout
+extend layout
+block content
+  
+  p
+    | #{"Photo by " + photo[0].P_FIRST_NAME +" "+ photo[0].P_LAST_NAME}
+    
+  - if(!photo[0].NUM_LIKES) photo[0].NUM_LIKES = '0'
+  table
+    tr
+      td
+        img(src=photo[0].URL)
+      td &nbsp;
+    tr
+      td
+        span.right_align= photo[0].NUM_LIKES + " Likes"
+    tr
+      td
+        a(href="/like?uid="+uid+"&pid="+photo[0].P_ID) Like
+    tr
+      td.photo_timestamp=photo[0].PHOTO_TIME
+    tr
+      td.PostSeparatorOuter
+    tr
+      td.PostSeparatorInner
+    tr
+      td.PostSeparatorOuter
+    tr
+      td
+        b Comments
+    - for (var inx = 0; inx < photo.length; inx++)
+      -if (photo[inx].U_ID)
+        
+        tr
+          td.PostSeparatorOuter
+        tr
+          td.PostSeparatorInner
+        tr
+          td.PostSeparatorOuter  
+        tr
+          td.Commenter
+            a(href="/user/"+photo[inx].U_ID)
+              span=photo[inx].C_FIRST_NAME + " " + photo[inx].C_LAST_NAME
+        tr
+          td
+            span.comment=photo[inx].COMMENT_STRING
+    tr
+      td.PostSeparatorOuter
+    tr
+      td.PostSeparatorInner
+    tr
+      td.PostSeparatorOuter
+
+      

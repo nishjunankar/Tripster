@@ -36,7 +36,6 @@ function query_db_photos(req, res) {
 	  	    	res.redirect('/');
 	  	    } else {
 	  	    	connection.close(); // done with the connection  
-	  	    	console.log(results);
 	  	    	query_db_accepted_users(req,res,results);
 	  	    }
 	
@@ -60,7 +59,6 @@ function query_db_accepted_users(req, res, photos) {
 		  	    	res.redirect('/');
 		  	    } else {
 		  	    	connection.close(); // done with the connection
-		  	    	console.log(results);
 		  	    	query_db_invited_users(req,res, photos, results);
 		  	    }
 		
@@ -85,7 +83,6 @@ function query_db_invited_users(req, res, photos, accepted_users) {
 		  	    	res.redirect('/');
 		  	    } else {
 		  	    	connection.close(); // done with the connection
-		  	    	console.log("IU");
 		  	    	query_db_trip(req,res, photos, accepted_users, results);
 		  	    }
 		
@@ -128,7 +125,6 @@ function query_db_trip(req, res, photos, accepted_users, invited_users) {
 // name = Name to query for
 // results = List object of query results
 function output_trip(req, res,photos, accepted_users, invited_users, trip) {
-	console.log('in output');
 	res.render('trip.jade', 
 			{title: "Trip: ", photos: photos, accepted_users: accepted_users, invited_users: invited_users, trip: trip, uid: req.session.user}
 		);
