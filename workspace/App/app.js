@@ -27,6 +27,7 @@ var express = require('express')
   , passport = require("passport")
   , session = require('express-session')
   , search = require('./routes/search')
+  , trip = require(('./routes/trip'))
 ;
 
 // Initialize express
@@ -45,6 +46,7 @@ app.get('/newsfeed_trips',newsfeed_trips.do_work);
 app.get('/like', like.do_work);
 app.get('/user/:uid', user.do_work);
 app.get('/search', search.do_work);
+app.get('/trip/:tid', trip.do_work);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
