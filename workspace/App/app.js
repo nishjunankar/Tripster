@@ -37,12 +37,8 @@ var express = require('express')
   , edit = require('./routes/edit')
   , submit_edit = require('./routes/submit_edit')
   , photo = require('./routes/photo')
-<<<<<<< HEAD
   , users_trips = require('./routes/users_trips')
-=======
-  
->>>>>>> origin/master
-;
+  ;
 
 // Initialize express
 var app = express();
