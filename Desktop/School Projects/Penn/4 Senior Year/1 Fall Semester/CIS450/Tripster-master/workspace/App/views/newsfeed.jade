@@ -1,0 +1,38 @@
+// Jade file to specify output of an actors list
+// Inherits from layout
+extend layout
+block content
+  p
+    | #{title}:
+  // Create a table with one row per result
+  a.nav_link(href='/newsfeed_trips') Trips Feed
+  table
+    - for (var inx = 0; inx < photos.length; inx++)
+        - if(!photos[inx].LIKES) photos[inx].LIKES = '0'
+        tr
+          td.PostSeparatorOuter
+        tr
+          td.PostSeparatorInner
+        tr
+          td.PostSeparatorOuter  
+        tr
+          td.photo_taker
+            a(href="/user/"+photos[inx].PUBLISHED_BY)
+              span=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME
+        tr
+          td
+            img(src=photos[inx].URL)
+          td &nbsp;
+        tr          
+          td.num_likes 
+            span.right_align= photos[inx].LIKES + " Likes"
+        tr
+          td.like_button
+              a(href="/like?uid="+uid+"&pid="+photos[inx].P_ID) Like
+        tr
+          td.photo_timestamp=photos[inx].TIMES
+    
+
+  // Put a click button that lets us return to the index page 
+  form(method='get', action='/')
+      input(type='submit', value='Return')
