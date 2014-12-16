@@ -7,20 +7,31 @@ var connectData = {
   "database": "c450proj" };
 var oracle =  require("oracle");
 
+var tid;
+
+
+/////
+// Query the oracle database, and call output_actors on the results
+//
+// res = HTTP result object sent back to the client
+// name = Name to query for
 
 function query_db(req, res) {
-  var photos = null;
-  var uid = JSON.stringify(req.session.user);
-  
-  if (!uid) res.redirect('/');
+	
+	var query="WITH Trips AS( ";
+	query += "SELECT DISTINCT T.T_ID ";
+	query += "FROM TRIP T ";
+	query += "inner join invite_trip IT on it.t_id = T.T_id ";
+	query += "WHERE IT.INVITED_USERS='" + req.session.user+"' OR T.CREATOR='" + req.session.user +"' ";
+	query += ") ";
+	query += "SELECT * FROM TRIPS T ";
+	query += "INNER JOIN TRIP T2 ON T2.T_ID=T.T_ID ";
+	
   oracle.connect(connectData, function(err, connection) {
     if ( err ) {
     	console.log(err);
     } else {
 	  	// selecting rows
-    	query = 'SELECT * FROM TRIP INNER JOIN TRIP_AFFILIATED_GROUPS TG ON TRIP.T_ID = TG.T_ID \n' +
-    			'INNER JOIN USERS_IN_GROUPS UIG ON TG.G_ID = UIG.g_ID WHERE UIG.U_ID = ' + uid.replace(/"/g, "'");
-    	console.log(query);
 	  	connection.execute(query, 
 	  			   [], 
 	  			   function(err, results) {
@@ -28,14 +39,13 @@ function query_db(req, res) {
 	  	    	console.log(err);
 	  	    	res.redirect('/');
 	  	    } else {
-	  	    	connection.close(); // done with the connection
-	  	    	output_trips(req, res, results);	  	    	
+	  	    	connection.close(); // done with the connection  
+	  	    	output_trips(req,res,results);
 	  	    }
 	
 	  	}); // end connection.execute
     }
 	  }); // end oracle.connect
-
 }
 
 
@@ -46,17 +56,14 @@ function query_db(req, res) {
 // name = Name to query for
 // results = List object of query results
 function output_trips(req, res,trips) {
-	console.log(trips);
-	res.render('my_trips.jade',
-		   { title: req.session.user + "'s Trips",
-		     trips: trips,
-		     uid: req.session.user}
-	  );
+	res.render('my_trips.jade', 
+			{title: "My Trips", trips: trips, uid: req.session.user}
+		);
 }
 
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	//console.log('in newsfeed');
-	query_db(req, res);
+	if (!req.session.user) res.redirect('/');
+	query_db(req,res)
 };

@@ -3,15 +3,22 @@
 extend layout
 block content
   p
-    | #{title}:
-  table(style='width:600px')
-    for trip in trips
-      tr
-        td= trip.NAME
-        td 
-          a.nav_link(href='/invite_friend_form?tid='+trip.T_ID) Invite Friend
-        td 
-          a.nav_link(href='/my_trips?uid='+uid) Add Photo
-        td 
-          a.nav_link(href='/my_trips?uid='+uid) Create Album
-    
+    | <b>#{title}</b>
+  table
+    - for (var i = 0; i < trips.length; i++)
+        tr
+          td.PostSeparatorOuter
+        tr
+          td.PostSeparatorInner
+        tr
+          td.PostSeparatorOuter       
+        tr
+          td.trip_name
+            a(href="/trip/"+trips[i].T_ID) #{trips[i].NAME}
+        tr
+          td 
+            span.location="To " + trips[i].LOCATION
+        tr
+          td.dates="On " +trips[i].START_DATE.getMonth() + "/" + trips[i].START_DATE.getDate() + "/"+ trips[i].START_DATE.getFullYear()
+
+       
