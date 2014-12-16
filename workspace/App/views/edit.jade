@@ -1,0 +1,46 @@
+// Jade file to specify output of an actors list
+// Inherits from layout
+extend layout
+block content
+  p
+    | #{title}: 
+  // Create a table with one row per result
+  form(method = "get", action='/submit_edit')
+    table
+      tr
+        td Current First Name
+        td &nbsp;
+        td=user_info[0].FIRST_NAME
+        td &nbsp;
+        td
+          input(type='text', name='first')
+      tr
+        td &nbsp;
+      tr
+        td Current Last Name
+        td &nbsp;
+        td=user_info[0].LAST_NAME
+        td &nbsp;
+        td
+          input(type='text', name='last')
+      tr
+        td &nbsp;
+      tr
+        td Current Email Address
+        td &nbsp;
+        td=user_info[0].EMAIL
+        td &nbsp;
+        td
+          input(type='text', name='email')
+      tr
+        td &nbsp;
+      tr
+        td Current Affiliation
+        td &nbsp;
+        td=user_info[0].AFFILIATION
+        td &nbsp;
+        td
+          input(type='text', name='affiliation')
+      tr
+        td &nbsp;
+    input(type='submit', value='Submit')

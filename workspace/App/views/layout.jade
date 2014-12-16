@@ -9,7 +9,12 @@ html
       h1 #{title} - Tripster
       a.newsfeed_link(href="/newsfeed") Newsfeed
       br
+      a.logout_button(href="/users_trips") My Trips
+      br
+      a.edit_link(href="/edit/:uid") Edit
+      br
       a.logout_button(href="/logout") Sign Out
+      
       p
         form(method='get', action='/search')
          select(name='table')

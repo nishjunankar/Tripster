@@ -24,7 +24,22 @@ block content
           td
             a(href="/user/"+invited_users[i].U_ID)
               span=invited_users[i].FIRST_NAME + " " + invited_users[i].LAST_NAME
-  
+    tr
+      td.PostSeparatorOuter
+    tr
+      td.PostSeparatorInner
+    tr
+      td.PostSeparatorOuter  
+    tr
+      td 
+        a.nav_link(href='/invite_friend_form?tid='+trip.T_ID) Invite Friend
+    tr
+      td.PostSeparatorOuter
+    tr
+      td.PostSeparatorInner
+    tr
+      td.PostSeparatorOuter
+  br
   div.section_title="Trip Photos:"
   table
     - for (var inx = 0; inx < photos.length; inx++)

@@ -10,8 +10,9 @@ block content
   br
   a.nav_link(href='/pending_requests') Pending Requests
   br
+  br
   // Create a table with one row per result
-  a.nav_link(href='/newsfeed_trips') Trips Feed
+  a.nav_link(href='/newsfeed_trips') Switch to Trips Feed
   table
     - for (var inx = 0; inx < photos.length; inx++)
         - if(!photos[inx].LIKES) photos[inx].LIKES = '0'
