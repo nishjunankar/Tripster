@@ -18,7 +18,9 @@ block content
         tr
           td.PostSeparatorOuter       
         tr
-          td.trip_name=trips[i].TRIP_NAME
+          td.trip_name
+            a(href="/trip/"+trips[i].T_ID)
+              span=trips[i].TRIP_NAME
         tr
           td 
             span.location="To " + trips[i].LOCATION
