@@ -28,7 +28,8 @@ var express = require('express')
   , session = require('express-session')
   , search = require('./routes/search')
   , trip = require('./routes/trip')
-  , photo = require(('./routes/photo'))
+  , photo = require('./routes/photo')
+  , users_trips = require('./routes/users_trips')
 ;
 
 // Initialize express
@@ -49,6 +50,7 @@ app.get('/user/:uid', user.do_work);
 app.get('/search', search.do_work);
 app.get('/trip/:tid', trip.do_work);
 app.get('/photo/:pid', photo.do_work);
+app.get('/users_trips', users_trips.do_work);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
