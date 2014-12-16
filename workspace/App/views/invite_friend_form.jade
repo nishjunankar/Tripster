@@ -1,0 +1,10 @@
+extend layout
+block content
+  p
+    form(method='get', action='/invite_friend')
+      |Friend Username or Email: 
+      input(name='fuid')
+      input(type='hidden', name='tid', value=tid)
+      br
+      br
+      input(type='submit', value='Invite Friend')
