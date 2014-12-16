@@ -1,0 +1,36 @@
+
+      
+// Jade file to specify output of an actors list
+// Inherits from layout
+extend layout
+block content
+  p
+    | #{title}:
+  a.nav_link(href='/newsfeed/') Photos Feed
+  - console.log(trips[0]);
+  table
+    - for (var i = 0; i < trips.length; i++)
+        -console.log(i + trips[i]);
+        tr
+          td.PostSeparatorOuter
+        tr
+          td.PostSeparatorInner
+        tr
+          td.PostSeparatorOuter       
+        tr
+          td.trip_name=trips[i].TRIP_NAME
+        tr
+          td 
+            span.location="To " + trips[i].LOCATION
+        tr
+          td
+            a(href="/user/"+trips[i].FRIEND)
+              span=trips[i].FIRST_NAME + " " + trips[i].LAST_NAME
+            span=" is going"
+        tr
+          td.dates="On " +trips[i].START_DATE.getMonth() + "/" + trips[i].START_DATE.getDate() + "/"+ trips[i].START_DATE.getFullYear()
+
+       
+  // Put a click button that lets us return to the index page 
+  form(method='get', action='/')
+      input(type='submit', value='Return')
