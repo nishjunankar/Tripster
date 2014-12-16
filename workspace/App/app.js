@@ -34,6 +34,8 @@ var express = require('express')
   , session = require('express-session')
   , search = require('./routes/search')
   , trip = require('./routes/trip')
+  , edit = require('./routes/edit')
+  , submit_edit = require('./routes/submit_edit')
   , photo = require('./routes/photo')
 <<<<<<< HEAD
   , users_trips = require('./routes/users_trips')
@@ -70,6 +72,8 @@ app.get('/trip/:tid', trip.do_work);
 app.get('/my_trips', my_trips.do_work);
 app.get('/photo/:pid', photo.do_work);
 app.get('/users_trips', users_trips.do_work);
+app.get('/edit/:uid', edit.do_work);
+app.get('/submit_edit', submit_edit.do_work);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){
