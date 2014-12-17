@@ -83,7 +83,7 @@ function query_db(req,res,table,search) {
 	    			    	      if (results.length < 1){
 	    			    	    	  db.close();
 	    		  	    		    connection.close();
-	    		  	   			    res.render('index.jade', { 
+	    		  	   			    res.render('signup.jade', { 
 	    		  				  	  title: 'No results found' 
 	    							  });
 	    		  	   		      }
@@ -121,7 +121,7 @@ function query_db(req,res,table,search) {
 	    		  	            else {
 	    			    	      if (results.length < 1){
 	    		  	    		    connection.close();
-	    		  	   			    res.render('index.jade', { 
+	    		  	   			    res.render('signup.jade', { 
 	    		  				  	  title: 'No results found' 
 	    							  });
 	    		  	   		      }
@@ -148,7 +148,7 @@ function query_db(req,res,table,search) {
 	    		  	            else {
 	    			    	      if (results.length < 1){
 	    		  	    		    connection.close();
-	    		  	   			    res.render('index.jade', { 
+	    		  	   			    res.render('signup.jade', { 
 	    		  				  	  title: 'No results found' 
 	    							  });
 	    		  	   		      }
