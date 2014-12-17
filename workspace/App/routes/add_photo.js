@@ -10,20 +10,26 @@ var oracle =  require("oracle");
 function insert_db(req, res, op, aid, album_name, image, privacy, tid) {
 	var uid = req.session.user;
 	var pid = Math.random().toString(32).substring(6);
-	var aid = Math.random().toString(32).substring(6);
+	if(pid == null){
+		pid = Math.random().toString(32).substring(6);
+	}
+	if(aid ==null){
+		 aid = Math.random().toString(32).substring(6);
+	}
 	
     var date;
     date = new Date();
     var months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
     date = date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear();
     
+    var check = false;
 	if (!uid) res.redirect('/');
 	
 	if (op == "0"){
 		if (album_name != null && album_name.length!=0){
 	   		create_album(res,album_name, privacy, uid, date);
 	    }
-		add_photo(res,image, uid, aid, date);
+		add_photo(res,image, uid, aid, date,tid,false);
 	}
 	else if (op == "1"){
    		if(aid != null && aid.length != 0){
@@ -31,9 +37,8 @@ function insert_db(req, res, op, aid, album_name, image, privacy, tid) {
    		}
     }
 	else{
-		add_photo(res,image,uid,'',date,pid);
 		
-		add_photo_trip (res,uid, tid, date, image,pid);
+		add_photo(res,image,uid,'',date,pid,tid,true);
 	}
 	
 	output_add_photo(res);
@@ -106,7 +111,7 @@ function create_album(res, album_name, privacy, uid, date,aid){
 	  });
 }
 
-function add_photo(res, image, uid, aid, date,pid){
+function add_photo(res, image, uid, aid, date,pid,tid,flag){
 	var query = "INSERT INTO PHOTO " +
 	"VALUES ('" + pid + "', '" + image + "', '" + uid + "', '" + aid + "', '" + date + "')\n";
 	oracle.connect(connectData, function(err, connection) {
@@ -121,6 +126,9 @@ function add_photo(res, image, uid, aid, date,pid){
 		  	    	console.log(err);
 		  	    } else {
 		  	    	connection.close(); 
+		  	    	if(flag){
+		  	    		add_photo_trip (res,uid, tid, date, image,pid);
+		  	    	}
 		  	    }
 		
 		  	}); // end connection.execute
