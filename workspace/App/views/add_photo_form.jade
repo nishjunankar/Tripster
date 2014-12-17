@@ -6,8 +6,8 @@ block content
       | Add Photo to Album:
       if (albums.length != 0)
         select(name="aid")
-          each album in albums
-            option(value=album.A_ID) #{album.NAME}
+          each album,index in albums
+            option(value=index) #{album.NAME}
        else
          p 
            | No Album. Create one 
@@ -40,7 +40,7 @@ block content
           
     input(type="hidden", name="op", value=op)
     input(type="hidden", name="tid", value=tid)
-    
+    input(type="hidden",name="albums" value=albums)
     input(type="submit", name="Submit")
     
       

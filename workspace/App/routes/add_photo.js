@@ -7,16 +7,24 @@ var connectData = {
   "database": "c450proj" };
 var oracle =  require("oracle");
 
-function insert_db(req, res, op, aid, album_name, image, privacy, tid) {
+function insert_db(req, res, op, aid, album_name, image, privacy, tid,albums) {
 	var uid = req.session.user;
 	var pid = Math.random().toString(32).substring(6);
+	
 	if(pid == null){
 		pid = Math.random().toString(32).substring(6);
 	}
+	
 	if(aid ==null){
 		 aid = Math.random().toString(32).substring(6);
 	}
-	
+	else{
+		aid = albums[aid];
+		console.log(aid);
+	}
+	console.log('1: '+JSON.stringify(aid));
+	console.log('2 '+albums);
+	console.log('3' +albums[aid]);
     var date;
     date = new Date();
     var months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
@@ -145,6 +153,6 @@ function output_add_photo(res) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	insert_db(req, res, req.query.op, req.query.aid, req.query.album_name, req.query.image, req.query.privacy, req.query.tid);
+	insert_db(req, res, req.query.op, req.query.aid, req.query.album_name, req.query.image, req.query.privacy, req.query.tid,req.query.albums);
 	
 };
