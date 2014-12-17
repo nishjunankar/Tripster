@@ -135,7 +135,10 @@ function query_db(req,res,table,search) {
 	    			//LOCATION CASE
 	    		case "locations":
 	    			db.close();
-	    			connection.execute("SELECT * FROM LOCATIONS L WHERE L.LOC_NAME = " + "'" + search + "'", 
+	    			var query = "";
+	    			query+="SELECT * FROM TRIP T WHERE T.LOCATION = '";
+	    			query+=search+"'";
+	    			connection.execute(query, 
 	    					[], 
 	    		  			   function(err, results) {
 	    		  	            if ( err ) {
