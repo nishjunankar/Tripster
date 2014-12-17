@@ -29,18 +29,22 @@ var Photo = mongoose.model('Photo', photoSchema);
 //var request = require('request');
 
 function add_photo_to_cache(req, res, src, u_id){
-	var dat = fs.readFileSync(src);
-	var suffix = substring(src.length-3);
-	var cT = 'image' + suffix;
-	var img = {data: dat, contentType: cT};
-	var to_cache = new Photo({ U_ID: u_id, URL: src, IMG: img});
-	to_cache.save(function (err, to_cache){
-		if (err) {return console.error(err);}
-	});
+	if (fs.existsSync(src)) {
+	    var dat = fs.readFileSync(src);
+		var suffix = substring(src.length-3);
+		var cT = 'image/' + suffix;
+		var img = {data: dat, contentType: cT};
+	    
+
+		var to_cache = new Photo({ U_ID: u_id, URL: src, IMG: img});
+		to_cache.save(function (err, to_cache){
+			if (err) {return console.error(err);}
+		});
+	}
 }
 
 function query_db(req,res,table,search) {
-	mongoose.connect('mongodb://localhost/test');
+	mongoose.connect('mongodb://localhost/photos');
 	  var db = mongoose.connection;
 	  db.on('error', console.error.bind(console, 'connection error:'));
 	  db.once('open', function callback (){
@@ -57,13 +61,19 @@ function query_db(req,res,table,search) {
 	    			Photo.find({U_ID: search}, function(err, photos){
 	    				if (err) {return console.error(err);}
 	    				if (photos.length > 1){
+	    					photos.forEach(function(element, index){
+	    						res.writeHead(100,{'Content-Type': element.IMG.contentType});
+	    						res.end(element.IMG.data, 'binary');
+	    					});
+	    				/*
 	    					res.render('photos.jade', {
 	    						title: "Results for: " + search,
 	    						results: photos
-	    					});
+	    					});*/
 	    				}
+	    		    	db.close();
 	    				});
-	    			connection.execute("SELECT * FROM PHOTOS P WHERE P.PUBLISHED_BY = " + "'" + search + "'", 
+	    			connection.execute("SELECT * FROM PHOTO P WHERE P.PUBLISHED_BY = " + "'" + search + "'", 
 	    		  			   [], 
 	    		  			   function(err, results) {
 	    		  	            if ( err ) {
@@ -80,6 +90,7 @@ function query_db(req,res,table,search) {
 	    			    	    	    results.forEach(function(element, index){
 	    			    	    	    	add_photo_to_cache(req, res, element.URL, search);
 	    			    	    	    });
+	    			    	    	    db.close();
 	    			    	    	    connection.close();
 	    		  	    	            res.render('photos.jade',{
 	    		  	    	              title: "Results for: " + search,
@@ -89,7 +100,18 @@ function query_db(req,res,table,search) {
 	    			break;
 	    			//USER CASE
 	    		case "users":
-	    			connection.execute("SELECT * FROM USERS U WHERE U.U_ID = " + "'" + search + "'", 
+	    			db.close();
+	    			var query = "";
+	    			query+="(SELECT * FROM USERS U WHERE U.U_ID = '";
+	    			query+=search+"')";
+	    			query+=" UNION ";
+	    			query+="(SELECT * FROM USERS U WHERE U.FIRST_NAME = '";
+	    			query+=search+"')";
+	    			query+=" UNION ";
+	    			query+="(SELECT * FROM USERS U WHERE U.LAST_NAME = '";
+	    			query+=search+"')";
+	    			
+	    			connection.execute(query, 
 	    					[], 
 	    		  			   function(err, results) {
 	    		  	            if ( err ) {
@@ -106,13 +128,13 @@ function query_db(req,res,table,search) {
 	    			    	    	    connection.close();
 	    		  	    	            res.render('actor.jade',{
 	    		  	    	              title: "Results for: " + search,
-		    		  	    		      results: results,
-		    		  	    		      uid: req.session.user} );
+		    		  	    		      results: results } );
 	    		  	                    }
 	    			    	    }});
 	    			break;
 	    			//LOCATION CASE
 	    		case "locations":
+	    			db.close();
 	    			connection.execute("SELECT * FROM LOCATIONS L WHERE L.LOC_NAME = " + "'" + search + "'", 
 	    					[], 
 	    		  			   function(err, results) {
