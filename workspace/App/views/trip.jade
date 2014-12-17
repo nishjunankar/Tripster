@@ -12,7 +12,7 @@ block content
       a(href="/user/"+trip[0].CREATOR)
         span=trip[0].CREATOR
     
-  div.section_title="Accepted users:"
+  div.section_title="People attending:"
   table
     - for (var i = 0; i < accepted_users.length; i++)
         tr
@@ -21,7 +21,7 @@ block content
               span=accepted_users[i].FIRST_NAME + " " + accepted_users[i].LAST_NAME
   table
   br
-  div.section_title="Invited users:"
+  div.section_title="People invited:"
   table
     - for (var i = 0; i < invited_users.length; i++)
         tr
@@ -71,7 +71,8 @@ block content
               span=photos[inx].FIRST_NAME + " " + photos[inx].LAST_NAME
         tr
           td
-            img(src=photos[inx].URL)
+            a(href="/photo/"+photos[inx].P_ID)
+              img(src=photos[inx].URL)
           td &nbsp;
         tr          
           td.num_likes 
@@ -79,6 +80,9 @@ block content
         tr
           td.like_button
               a(href="/like?uid="+uid+"&pid="+photos[inx].P_ID) Like
+        tr          
+          td.view_comments
+            a(href="/photo/"+photos[inx].P_ID) View comments
         tr
           td.photo_timestamp=photos[inx].SHARED_TIME
     

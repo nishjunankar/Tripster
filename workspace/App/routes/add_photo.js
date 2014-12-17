@@ -9,6 +9,8 @@ var oracle =  require("oracle");
 
 function insert_db(req, res, op, aid, album_name, image, privacy, tid) {
 	var uid = req.session.user;
+	var pid = Math.random().toString(32).substring(6);
+	var aid = Math.random().toString(32).substring(6);
 	
     var date;
     date = new Date();
@@ -19,7 +21,7 @@ function insert_db(req, res, op, aid, album_name, image, privacy, tid) {
 	
 	if (op == "0"){
 		if (album_name != null && album_name.length!=0){
-	   		aid = create_album(res,album_name, privacy, uid, date);
+	   		create_album(res,album_name, privacy, uid, date);
 	    }
 		add_photo(res,image, uid, aid, date);
 	}
@@ -29,7 +31,7 @@ function insert_db(req, res, op, aid, album_name, image, privacy, tid) {
    		}
     }
 	else{
-		var pid = add_photo(res,image,uid,'',date);
+		add_photo(res,image,uid,'',date,pid);
 		
 		add_photo_trip (res,uid, tid, date, image,pid);
 	}
@@ -61,7 +63,6 @@ function add_photo_trip(res, uid, tid, date, image,pid){
 }
 
 function add_album_trip(res, aid, tid, date, uid){
-	var pid = Math.random().toString(32).substring(6);
 	var query = "INSERT INTO ALBUM_SHARE_TRIP " +
 	"VALUES ('" + aid + "', '" + tid + "', '" + date + "', '" + uid + "')\n";
 	oracle.connect(connectData, function(err, connection) {
@@ -83,8 +84,7 @@ function add_album_trip(res, aid, tid, date, uid){
 	  });
 }
 
-function create_album(res, album_name, privacy, uid, date){
-	var aid = Math.random().toString(32).substring(6);
+function create_album(res, album_name, privacy, uid, date,aid){
 	var query = "INSERT INTO ALBUM " +
 	"VALUES ('" + aid + "', '" + date + "', '" + album_name + "', '" + privacy + "', '" + uid + "')\n";
 	oracle.connect(connectData, function(err, connection) {
@@ -99,7 +99,6 @@ function create_album(res, album_name, privacy, uid, date){
 		  	    	console.log(err);
 		  	    } else {
 		  	    	connection.close(); 
-		  	    	return aid;
 		  	    }
 		
 		  	}); // end connection.execute
@@ -107,8 +106,7 @@ function create_album(res, album_name, privacy, uid, date){
 	  });
 }
 
-function add_photo(res, image, uid, aid, date){
-	var pid = Math.random().toString(32).substring(6);
+function add_photo(res, image, uid, aid, date,pid){
 	var query = "INSERT INTO PHOTO " +
 	"VALUES ('" + pid + "', '" + image + "', '" + uid + "', '" + aid + "', '" + date + "')\n";
 	oracle.connect(connectData, function(err, connection) {
@@ -123,7 +121,6 @@ function add_photo(res, image, uid, aid, date){
 		  	    	console.log(err);
 		  	    } else {
 		  	    	connection.close(); 
-		  	    	return pid;
 		  	    }
 		
 		  	}); // end connection.execute

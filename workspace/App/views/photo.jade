@@ -51,5 +51,10 @@ block content
       td.PostSeparatorInner
     tr
       td.PostSeparatorOuter
+    tr
+      td
+        form(method = 'get', action='/comment/' + photo[0].P_ID + "/" + uid)
+          input(type='text', name='comment')
+          input(type='submit', value='Submit')
 
       

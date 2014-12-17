@@ -8,12 +8,9 @@ block content
   table
     - for (var inx = 0; inx < results.length; inx++)
         tr
-          td=results[inx].FIRST_NAME+" "
-          td &nbsp;
-          td=results[inx].LAST_NAME
-          td &nbsp;
-          td
-            a(href="/user/" + results[inx].U_ID) Click Here to view profile
+          td.photo_taker
+            a(href="/user/"+results[inx].U_ID)
+              span="User id is: " + results[inx].U_ID
   // Put a click button that lets us return to the index page
                  
                  

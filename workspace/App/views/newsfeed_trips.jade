@@ -6,6 +6,16 @@ extend layout
 block content
   p
     | #{title}:
+  a.nav_link(href='/my_trips') View My Trips
+  br
+  a.nav_link(href='/create_trip_form') Create Trip
+  br
+  a.nav_link(href='/pending_requests') Pending Requests
+  br
+  br
+  a.nav_link(href='/recommended_friends') Recommended Friends
+  br
+  br
   a.nav_link(href='/newsfeed/') Switch to Photos Feed
   - console.log(trips[0]);
   table
