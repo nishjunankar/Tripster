@@ -40,6 +40,7 @@ var express = require('express')
   , submit_edit = require('./routes/submit_edit')
   , photo = require('./routes/photo')
   , recommended_friends = require('./routes/recommended_friends')
+  , comment = require('./routes/comment')
   ;
 
 // Initialize express
@@ -74,6 +75,7 @@ app.get('/photo/:pid', photo.do_work);
 app.get('/edit/:uid', edit.do_work);
 app.get('/submit_edit', submit_edit.do_work);
 app.get('/recommended_friends', recommended_friends.do_work);
+app.get('/comment/:pid/:uid', comment.do_work);
 
 // Listen on the port we specify
 http.createServer(app).listen(app.get('port'), function(){

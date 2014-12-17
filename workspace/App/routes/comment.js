@@ -12,7 +12,7 @@ var oracle =  require("oracle");
 //
 // res = HTTP result object sent back to the client
 // name = Name to query for
-function query_db(res, uid, pid) {
+function query_db(res, uid, pid, comment) {
   // TODO: Ensure that uid is equal to the user id of the user, and if
 	// not do not let the like go through
 	
@@ -21,7 +21,7 @@ function query_db(res, uid, pid) {
     	console.log(err);
     } else {
 	  	// selecting rows
-    	query = construct_query_comment_photo(uid, pid);
+    	query = construct_query_comment_photo(uid, pid, comment);
     	console.log(query);
 	  	connection.execute(query, 
 	  			   [], 
@@ -29,6 +29,7 @@ function query_db(res, uid, pid) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
+	  	    	res.redirect('back')
 	  	    	connection.close(); // done with the connection
 	  	    }
 	
@@ -37,9 +38,9 @@ function query_db(res, uid, pid) {
   }); // end oracle.connect
 }
 
-function construct_query_comment_photo(uid,pid) {
-	var query = "INSERT INTO LIKE_PHOTO " +
-		"VALUES ('" + uid + "', '" + pid + "')";
+function construct_query_comment_photo(uid,pid, comment) {
+	var query = "INSERT INTO COMMENTS_PHOTO (U_ID, P_ID, COMMENT_STRING) " +
+		"VALUES ('" + uid + "', '" + pid + "', '" + comment + "')";
 	return query;
 }
 /////
@@ -48,15 +49,9 @@ function construct_query_comment_photo(uid,pid) {
 // res = HTTP result object sent back to the client
 // name = Name to query for
 // results = List object of query results
-function output_newsfeed(res,results) {
-	res.render('newsfeed.jade',
-		   { title: "Newsfeed for user ",
-		     photos: results }
-	  );
-}
 
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(res, req.query.uid, req.query.pid);
+	query_db(res, req.params.uid, req.params.pid, req.query.comment);
 };
