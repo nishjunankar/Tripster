@@ -38,7 +38,7 @@ function query_db(req,res,tid,uid,fuid) {
 		  	   				} else {
 		  	   					connection.close(); // done with the connection
 		  	   					if(tid == null || tid.length == 0){
-		  	   						addFriendsWith(uid,fuid)
+		  	   						addFriendsWith(res, uid,fuid)
 		  	   					}
 		  	   					else{
 		  	   						output_accept_request(res, "Accepted Request from" + fuid + "!");
@@ -54,7 +54,7 @@ function query_db(req,res,tid,uid,fuid) {
 	  }); // end oracle.connect••••••
 	}
 
-function addFriendsWith(uid,fuid){
+function addFriendsWith(res, uid,fuid){
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
 	    	console.log(err);

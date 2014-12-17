@@ -47,7 +47,6 @@ function query_db(req, res) {
 	query += "inner join mutual_counts mc on mc.u_id = rf.u_id\n";
 	query += "inner join users u on u.u_id = mc.u_id\n";
 	query += "order by mc.mutuals desc\n";
-	query += "order by mc.mutuals desc\n";
 
 
 	console.log(query);
