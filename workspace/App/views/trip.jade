@@ -12,7 +12,7 @@ block content
       a(href="/user/"+trip[0].CREATOR)
         span=trip[0].CREATOR
     
-  div.section_title="Accepted users:"
+  div.section_title="People attending:"
   table
     - for (var i = 0; i < accepted_users.length; i++)
         tr
@@ -21,7 +21,7 @@ block content
               span=accepted_users[i].FIRST_NAME + " " + accepted_users[i].LAST_NAME
   table
   br
-  div.section_title="Invited users:"
+  div.section_title="People invited:"
   table
     - for (var i = 0; i < invited_users.length; i++)
         tr
