@@ -66,7 +66,7 @@ app.get('/my_trips', my_trips.do_work);
 app.get('/invite_friend', invite_friend.do_work);
 app.get('/invite_friend_form', invite_friend_form.do_work);
 app.get('/pending_requests', pending_requests.do_work);
-app.get('accept_request', accept_request.do_work);
+app.get('/accept_request', accept_request.do_work);
 app.get('/search', search.do_work);	
 app.get('/create_trip', create_trip.do_work);
 app.get('/create_trip_form', create_trip_form.do_work);

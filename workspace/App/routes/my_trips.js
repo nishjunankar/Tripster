@@ -9,7 +9,6 @@ var oracle =  require("oracle");
 
 
 function query_db(req, res) {
-  var photos = null;
   var uid = JSON.stringify(req.session.user);
   
   if (!uid) res.redirect('/');
@@ -18,8 +17,7 @@ function query_db(req, res) {
     	console.log(err);
     } else {
 	  	// selecting rows
-    	query = 'SELECT * FROM TRIP INNER JOIN TRIP_AFFILIATED_GROUPS TG ON TRIP.T_ID = TG.T_ID \n' +
-    			'INNER JOIN USERS_IN_GROUPS UIG ON TG.G_ID = UIG.g_ID WHERE UIG.U_ID = ' + uid.replace(/"/g, "'");
+    	query = 'SELECT * FROM TRIP WHERE TRIP.CREATOR = ' + uid.replace(/"/g, "'");
     	console.log(query);
 	  	connection.execute(query, 
 	  			   [], 

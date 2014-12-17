@@ -18,7 +18,7 @@ function query_db(req, res) {
     	console.log(err);
     } else {
 	  	// selecting rows
-    	var query = "SELECT IT.INVITED_BY, IT.T_ID, FR.REQUESTED_BY " +
+    	var query = "SELECT IT.ACCEPTED ITA, FR.ACCEPTED FRA, IT.INVITED_BY, IT.T_ID, FR.REQUESTED_BY " +
     			"FROM INVITE_TRIP IT FULL OUTER JOIN FRIEND_REQUESTS FR ON IT.INVITED_USERS = FR.REQUESTED_USERS WHERE " + 
     		"IT.INVITED_USERS = " + uid.replace(/"/g, "'") + " or FR.REQUESTED_USERS = " + uid.replace(/"/g, "'");
     	console.log(query);
@@ -47,11 +47,7 @@ function query_db(req, res) {
 // name = Name to query for
 // results = List object of query results
 function output_pending_requests(req, res,requests) {
-	console.log(requests);
-	results = [];
-	for (i = 0; i < requests.length; i++){
-		results.push()
-	}
+	
 	res.render('pending_requests.jade',
 		   { title: "Pending Requests",
 		     requests: requests,

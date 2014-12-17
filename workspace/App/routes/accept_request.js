@@ -20,7 +20,7 @@ function query_db(req,res,tid,uid,fuid) {
 	    			"WHERE FR.REQUESTED_USERS = " + uid.replace(/"/g, "'") + "AND FR.REQUESTED_BY = " + fuid.replace(/"/g, "'");
 	    	if (tid){
 	    		query = "UPDATE INVITE_TRIP IT SET IT.ACCEPTED=1" +
-    			"WHERE IT.INVITED_USERS = " + uid.replace(/"/g, "'") + "AND FR.INVITED_BY = " + fuid.replace(/"/g, "'"); 
+    			"WHERE IT.INVITED_USERS = " + uid.replace(/"/g, "'") + "AND IT.INVITED_BY = " + fuid.replace(/"/g, "'"); 
 	    	}
 		  	connection.execute(query, 
 		  			   [], 
@@ -37,25 +37,48 @@ function query_db(req,res,tid,uid,fuid) {
 		  	   					res.redirect('/');
 		  	   				} else {
 		  	   					connection.close(); // done with the connection
-		  	   					output_accept_request(res, "Accepted Request from" + fuid + "!");
-		  	   					  	    	
+		  	   					if(tid == null || tid.length == 0){
+		  	   						addFriendsWith(uid,fuid)
+		  	   					}
+		  	   					else{
+		  	   						output_accept_request(res, "Accepted Request from" + fuid + "!");
+		  	   					}
 		  	   				}
 		 	
 		  	   			});
 		  	    	}
 		  	    }
 		
-		  	}); // end connection.execute
+		  	); // end connection.execute
 	    }
 	  }); // end oracle.connect••••••
 	}
 
-/////
-// Given a set of query results, output a table
-//
-// res = HTTP result object sent back to the client
-// name = Name to query for
-// results = List object of query results
+function addFriendsWith(uid,fuid){
+	oracle.connect(connectData, function(err, connection) {
+	    if ( err ) {
+	    	console.log(err);
+	    } else {
+		  	// selecting rows
+	    	var query = "INSERT INTO FRIENDS_WITH " + "VALUES ('" + fuid.replace(/"/g, "")+ "', '" + uid.replace(/"/g, "") + "')";
+	    	console.log(query);
+		  	connection.execute(query, 
+		  			   [], 
+		  			   function(err, results) {
+		  	    if ( err ) {
+		  	    	console.log(err);
+		  	    	res.redirect('/'); 
+		  	    } else {
+		  	    	connection.close(); // done with the connection
+		  	    	output_accept_request(res, "Accepted Request from" + fuid + "!");
+		  	    }
+		
+		  	}); // end connection.execute
+	    }
+		  });
+
+}
+
 function output_accept_request( res, message) {
 	res.render('signup.jade',
 		   { title: message}
