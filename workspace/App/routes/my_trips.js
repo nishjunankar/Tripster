@@ -42,8 +42,6 @@ function query_db(req, res) {
 	  	    	res.redirect('/');
 	  	    } else {
 	  	    	connection.close(); // done with the connection  
-	  	    	console.log(query)
-	  	    	console.log(results)
 	  	    	output_trips(req,res,results);
 	  	    }
 	
