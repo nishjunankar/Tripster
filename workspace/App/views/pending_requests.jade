@@ -10,25 +10,23 @@ block content
   p
     | #{title}:
   
+
     table
-    tr
-      td TripID/FriendRequest
-      td RequestedBy
-      td Accept
-    
-    for request in requests
-      tr
+      for request in requests
         if request.T_ID
-          td= request.T_ID
-          td= request.INVITED_BY
+          tr
+            td= "Trip " + request.T_ID
+            td= " Invited by " + request.INVITED_BY
         else
-          td FriendRequest
-          td= request.REQUESTED_BY
-        td 
-          form(method='get', action='/accept_request')
-            input(type='hidden', name='tid', value=request.T_ID)
-            input(type='hidden', name='uid', value=uid)
-            input(type='hidden', name='fuid', value=fuid)
-            input(type='submit', value='Accept')
+          tr
+            td FriendRequest
+            td= request.REQUESTED_BY
+        tr
+          td 
+            form(method='get', action='/accept_request')
+              input(type='hidden', name='tid', value=request.T_ID)
+              input(type='hidden', name='uid', value=uid)
+              input(type='hidden', name='fuid', value=fuid)
+              input(type='submit', value='Accept')
     
     
