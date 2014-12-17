@@ -1,0 +1,46 @@
+extend layout
+block content
+  p
+  form(method='get', action='/add_photo')
+    if (op == "0")
+      | Add Photo to Album:
+      if (albums.length != 0)
+        select(name="aid")
+          each album in albums
+            option(value=album.A_ID) #{album.NAME}
+       else
+         p 
+           | No Album. Create one 
+           br
+           input(type="text", name="album_name", placeholder="New Album Name")
+      input(type='text', name='image', placeholder = "Image URL")
+      
+      select(name='privacy')
+        option(value='0') Public
+        option(value='1') Private
+        option(value='2') Shared with trip members
+        
+    else if (op == "1") 
+      | Add Album to Trip:
+      if (albums.length == 0)
+        P
+          | No Album :(
+      else
+        select(name="aid")
+          each album in albums
+            option(value=album.A_ID) #{album.NAME}
+    else
+      | Add Photo to Trip:
+      input(type='text', name='image', placeholder = "Image URL")
+      
+      select(name='privacy')
+        option(value='0') Public
+        option(value='1') Private
+        option(value='2') Shared with trip members 
+          
+    input(type="hidden", name="op", value=op)
+    input(type="hidden", name="tid", value=tid)
+    
+    input(type="submit", name="Submit")
+    
+      
