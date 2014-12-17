@@ -16,7 +16,10 @@ block content
         tr
           td.PostSeparatorInner
         tr
-          td.PostSeparatorOuter       
+          td.PostSeparatorOuter
+        -if (i <= 3)
+          tr
+            td.rec="Recommended for you"      
         tr
           td.trip_name
             a(href="/trip/"+trips[i].T_ID)

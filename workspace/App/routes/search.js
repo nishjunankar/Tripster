@@ -106,7 +106,8 @@ function query_db(req,res,table,search) {
 	    			    	    	    connection.close();
 	    		  	    	            res.render('actor.jade',{
 	    		  	    	              title: "Results for: " + search,
-		    		  	    		      results: results } );
+		    		  	    		      results: results,
+		    		  	    		      uid: req.session.user} );
 	    		  	                    }
 	    			    	    }});
 	    			break;

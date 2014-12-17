@@ -125,6 +125,13 @@ header {
 header a {
   color: #fff;
 }
+td.rec {
+  color: #f00;
+  text-align: right;
+  font-size: 0.8em;
+  line-height: 2;
+  font-style: italic;
+}
 td.PostSeparatorInner {
   height: 1px;
   background-color: #919191;

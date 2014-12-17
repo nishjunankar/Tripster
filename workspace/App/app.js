@@ -22,8 +22,10 @@ var express = require('express')
   , invite_friend_form = require('./routes/invite_friend_form')
   , pending_requests = require('./routes/pending_requests')
   , friend_request_form = require('./routes/friend_request_form')
+  , add_photo_form = require('./routes/add_photo_form')
   , friend_request = require('./routes/friend_request')
   , accept_request = require('./routes/accept_request')
+  , add_photo = require('./routes/add_photo')
   , http = require('http')
   , path = require('path')
   , stylus =  require("stylus")
@@ -40,7 +42,6 @@ var express = require('express')
   , edit = require('./routes/edit')
   , submit_edit = require('./routes/submit_edit')
   , photo = require('./routes/photo')
-  , users_trips = require('./routes/users_trips')
   ;
 
 // Initialize express
@@ -62,6 +63,8 @@ app.get('/friend_request_form', friend_request_form.do_work);
 app.get('/friend_request', friend_request.do_work);
 app.get('/create_trip', create_trip.do_work);
 app.get('/create_trip_form', create_trip_form.do_work);
+app.get('/add_photo_form', add_photo_form.do_work);
+app.get('/add_photo', add_photo.do_work)
 app.get('/my_trips', my_trips.do_work);
 app.get('/invite_friend', invite_friend.do_work);
 app.get('/invite_friend_form', invite_friend_form.do_work);
@@ -73,7 +76,6 @@ app.get('/create_trip_form', create_trip_form.do_work);
 app.get('/trip/:tid', trip.do_work);
 app.get('/my_trips', my_trips.do_work);
 app.get('/photo/:pid', photo.do_work);
-app.get('/users_trips', users_trips.do_work);
 app.get('/edit/:uid', edit.do_work);
 app.get('/submit_edit', submit_edit.do_work);
 

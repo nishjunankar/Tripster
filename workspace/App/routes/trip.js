@@ -92,7 +92,7 @@ function query_db_invited_users(req, res, photos, accepted_users) {
 }
 
 function query_db_trip(req, res, photos, accepted_users, invited_users) {
-	var query = "SELECT TO_CHAR(start_date, 'Month D') AS start_date, TO_CHAR(end_date, 'Month D, YYYY') AS end_date, NAME, LOCATION, PRIVACY_FLAG, CREATOR FROM TRIP T WHERE T.T_ID = " + tid
+	var query = "SELECT TO_CHAR(start_date, 'Month D') AS start_date, TO_CHAR(end_date, 'Month D, YYYY') AS end_date, NAME, LOCATION, PRIVACY_FLAG, CREATOR, T_ID FROM TRIP T WHERE T.T_ID = " + tid
 
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
@@ -125,8 +125,21 @@ function query_db_trip(req, res, photos, accepted_users, invited_users) {
 // name = Name to query for
 // results = List object of query results
 function output_trip(req, res,photos, accepted_users, invited_users, trip) {
+	var uid = req.session.user;
+	var user_in_trip =0;
+	if (uid === trip[0].CREATOR) {
+		user_in_trip = 1;
+	} else {
+		for(i=0; i < accepted_users.length;i++){
+			if(accepted_users[i].U_ID === uid) {
+				user_in_trip = 1;
+				break;
+			} 
+		}
+		
+	}
 	res.render('trip.jade', 
-			{title: "Trip: ", photos: photos, accepted_users: accepted_users, invited_users: invited_users, trip: trip, uid: req.session.user}
+			{title: "Trip: ", photos: photos, accepted_users: accepted_users, invited_users: invited_users, trip: trip, uid: req.session.user, user_in_trip: user_in_trip}
 		);
 }
 
