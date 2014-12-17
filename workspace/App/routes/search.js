@@ -81,6 +81,7 @@ function query_db(req,res,table,search) {
 	    		  	            }
 	    		  	            else {
 	    			    	      if (results.length < 1){
+	    			    	    	  db.close();
 	    		  	    		    connection.close();
 	    		  	   			    res.render('index.jade', { 
 	    		  				  	  title: 'No results found' 
