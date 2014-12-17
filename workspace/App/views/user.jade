@@ -15,8 +15,9 @@ block content
         tr
           td.friendship
             -if(is_friends)
-              span="Already Friends: Unfriend? (TODO)"
+              span="Already Friends"
             -else
-              span="Add Friend (TODO)" 
+              a(href="/friend_request?fuid="+user_info[0].U_ID)
+                span="Add Friend" 
     
       
