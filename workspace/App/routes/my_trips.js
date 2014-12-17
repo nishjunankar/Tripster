@@ -23,7 +23,7 @@ function query_db(req, res) {
 	var query="WITH Trips AS( ";
 	query += "SELECT DISTINCT T.T_ID ";
 	query += "FROM TRIP T ";
-	query += "inner join invite_trip IT on it.t_id = T.T_id ";
+	query += "left join invite_trip IT on it.t_id = T.T_id ";
 	query += "WHERE IT.INVITED_USERS='" + req.session.user+"' OR T.CREATOR='" + req.session.user +"' ";
 	query += ") ";
 	query += "SELECT * FROM TRIPS T ";
@@ -42,6 +42,8 @@ function query_db(req, res) {
 	  	    	res.redirect('/');
 	  	    } else {
 	  	    	connection.close(); // done with the connection  
+	  	    	console.log(query)
+	  	    	console.log(results)
 	  	    	output_trips(req,res,results);
 	  	    }
 	
