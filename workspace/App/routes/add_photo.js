@@ -7,6 +7,7 @@ var connectData = {
   "database": "c450proj" };
 var oracle =  require("oracle");
 
+
 function insert_db(req, res, op, aid, album_name, image, privacy, tid,albums) {
 	var uid = req.session.user;
 	var pid = Math.random().toString(32).substring(6);
@@ -35,9 +36,9 @@ function insert_db(req, res, op, aid, album_name, image, privacy, tid,albums) {
 	
 	if (op == "0"){
 		if (album_name != null && album_name.length!=0){
-	   		create_album(res,album_name, privacy, uid, date);
+	   		create_album(res,album_name, privacy, uid, date, aid);
 	    }
-		add_photo(res,image, uid, aid, date,tid,false);
+		add_photo(res,image, uid, aid, date,pid, tid,false);
 	}
 	else if (op == "1"){
    		if(aid != null && aid.length != 0){
@@ -54,8 +55,8 @@ function insert_db(req, res, op, aid, album_name, image, privacy, tid,albums) {
 }
 
 function add_photo_trip(res, uid, tid, date, image,pid){
-	var query = "INSERT INTO PHOTO_SHARE_TRIP " +
-	"VALUES ('" + pid + "', '" + tid + "', '" + date + "', '" + uid + "')\n";
+	var query = "INSERT INTO PHOTO_SHARE_TRIP (P_ID, T_ID, SHARED_BY) " +
+	"VALUES ('" + pid + "', '" + tid + "', '" + uid + "')\n";
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
 	    	console.log(err);
@@ -76,8 +77,8 @@ function add_photo_trip(res, uid, tid, date, image,pid){
 }
 
 function add_album_trip(res, aid, tid, date, uid){
-	var query = "INSERT INTO ALBUM_SHARE_TRIP " +
-	"VALUES ('" + aid + "', '" + tid + "', '" + date + "', '" + uid + "')\n";
+	var query = "INSERT INTO ALBUM_SHARE_TRIP (A_ID, T_ID, SHARED_BY) " +
+	"VALUES ('" + aid + "', '" + tid + "', '" + uid + "')\n";
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
 	    	console.log(err);
@@ -98,8 +99,8 @@ function add_album_trip(res, aid, tid, date, uid){
 }
 
 function create_album(res, album_name, privacy, uid, date,aid){
-	var query = "INSERT INTO ALBUM " +
-	"VALUES ('" + aid + "', '" + date + "', '" + album_name + "', '" + privacy + "', '" + uid + "')\n";
+	var query = "INSERT INTO ALBUM (A_ID, NAME, PRIVACY_FLAG, CREATOR) " +
+	"VALUES ('" + aid +  "', '" + album_name + "', '" + privacy + "', '" + uid + "')\n";
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
 	    	console.log(err);
@@ -120,8 +121,8 @@ function create_album(res, album_name, privacy, uid, date,aid){
 }
 
 function add_photo(res, image, uid, aid, date,pid,tid,flag){
-	var query = "INSERT INTO PHOTO " +
-	"VALUES ('" + pid + "', '" + image + "', '" + uid + "', '" + aid + "', '" + date + "')\n";
+	var query = "INSERT INTO PHOTO (P_ID, URL, PUBLISHED_BY, A_ID) " +
+	"VALUES ('" + pid + "', '" + image + "', '" + uid + "', '" + aid +  "')\n";
 	oracle.connect(connectData, function(err, connection) {
 	    if ( err ) {
 	    	console.log(err);
