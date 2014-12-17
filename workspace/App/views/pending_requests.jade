@@ -9,25 +9,33 @@ block content
   br
   p
     | #{title}:
-  
-    ul
-    for request in requests
+    
+    for request in invites
+      ul  
+        li= "Trip Invite: "
+          a(href="/trip/" + request.T_ID)
+            span=request.NAME
+        li= "Invited by: "
+          a(href="/user/" + request.INVITED_BY)
+            span=request.FIRST_NAME + " "+  request.LAST_NAME
+        form(method='get', action='/accept_request')
+          input(type='hidden', name='type', value='trip')
+          input(type='hidden', name='tid', value=request.T_ID)
+          input(type='hidden', name='uid', value=uid)
+          input(type='hidden', name='fuid', value=request.INVITED_BY)
+          input(type='submit', value='Accept')
+            
+    for request in friend_reqs
       ul
-      if request.T_ID && request.ITA == 0
-          li= "Trip Invite (TripID): " +request.T_ID
-          li= "Invited bY: " + request.INVITED_BY
-          form(method='get', action='/accept_request')
-            input(type='hidden', name='tid', value=request.T_ID)
-            input(type='hidden', name='uid', value=uid)
-            input(type='hidden', name='fuid', value=request.INVITED_BY)
-            input(type='submit', value='Accept')
-        if request.T_ID == null && request.FRA == 0
-          li="Friend Request"
-          li= "Requested By: " + request.REQUESTED_BY 
-          form(method='get', action='/accept_request')
-            input(type='hidden', name='tid', value=request.T_ID)
-            input(type='hidden', name='uid', value=uid)
-            input(type="hidden", name='fuid', value=request.REQUESTED_BY)
-            input(type='submit', value='Accept')
-       br
+        li="Friend Request"
+        li= "Requested by: " 
+          a(href="/user/" + request.REQUESTED_BY)
+            span=request.FIRST_NAME + " " + request.LAST_NAME
+        form(method='get', action='/accept_request')
+          input(type='hidden', name='tid', value=request.T_ID)
+          input(type='hidden', name='type', value='friend')
+          input(type='hidden', name='uid', value=uid)
+          input(type="hidden", name='fuid', value=request.REQUESTED_BY)
+          input(type='submit', value='Accept')
+     br
        

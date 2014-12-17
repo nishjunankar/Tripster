@@ -24,34 +24,38 @@ function query_db(req,res,userid,password) {
 	  	    if ( err ) {
 	  	    	console.log(err);
 	  	    } else {
-	  	    	var bcrypt = require('bcrypt')
-	  	    	var salt = bcrypt.genSaltSync(10);
-				// Hash the password with the salt
-				var hash = bcrypt.hashSync(password, salt) + "";
-				//determines if the hashes are equal or for legacy if DEFAULT_PASSWORD is used
-				var equalsPassword = bcrypt.compareSync(password, results[0].PASSWORD_HASH) ||
-				(password == "DEFAULT_PASSWORD" && results[0].PASSWORD_HASH == "DEFAULT_PASSWORD"); // true
-				//console.log(equalsPassword);
-				//console.log(bcrypt.compareSync("hello", hash));
-	  	    	//if no query returned or wrong password
-	  	    	if (results.length < 1 || !equalsPassword){
+	  	    	if(!results[0]) {
 	  	    		connection.close();
 	  	   			console.log("Wrong Username or Password");
 	  	   			res.render('index.jade', { 
 	  					title: 'Wrong Username or Password' 
   					});
-	  	   		}
-	  	   		//else correct password
-	  	   		else{
-	  	   			//Saves the user. Nish said to do this though
-	  	   			//thought it doesn't work.
-	  	   			//note dont save results[0] since this is not done
-	  	   			//in signup.js
-	  	   			req.session.user = userid;
-	  	    		connection.close(); // done with the connection
-	  	    		//THIS IS WHERE YOU SHOULD CALL YOUR FUNCTION
-	  	    		//YOU CAN REMOVE LINE OF CODE BELOW
-	  	    		res.redirect('/newsfeed/');
+	  	    	} else {
+		  	    	var bcrypt = require('bcrypt')
+		  	    	var salt = bcrypt.genSaltSync(10);
+					// Hash the password with the salt
+					var hash = bcrypt.hashSync(password, salt) + "";
+					//determines if the hashes are equal or for legacy if DEFAULT_PASSWORD is used
+					var equalsPassword = bcrypt.compareSync(password, results[0].PASSWORD_HASH) ||
+					(password == "DEFAULT_PASSWORD" && results[0].PASSWORD_HASH == "DEFAULT_PASSWORD"); // true
+					//console.log(equalsPassword);
+					//console.log(bcrypt.compareSync("hello", hash));
+		  	    	//if no query returned or wrong password
+		  	    	if (!equalsPassword){
+		  	    		connection.close();
+		  	   			console.log("Wrong Username or Password");
+		  	   			res.render('index.jade', { 
+		  					title: 'Wrong Username or Password' 
+	  					});
+		  	    	}
+	  	   		
+		  	   		//else correct password
+		  	   		else{
+		  	   			//Saves the user
+		  	   			req.session.user = userid;
+		  	    		connection.close(); // done with the connection
+		  	    		res.redirect('/newsfeed/');
+		  	    	}
 	  	    	}
 	  	    }
 	

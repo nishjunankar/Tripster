@@ -8,7 +8,7 @@ var connectData = {
 var oracle =  require("oracle");
 
 
-function query_db(req,res,tid,uid,fuid) {
+function query_db(req,res,tid,uid,fuid, type) {
 	  var uid = JSON.stringify(req.session.user);
 	  fuid = JSON.stringify(fuid);
 	  oracle.connect(connectData, function(err, connection) {
@@ -16,12 +16,15 @@ function query_db(req,res,tid,uid,fuid) {
 	    	console.log(err);
 	    } else {
 		  	
-	    	var query = "UPDATE FRIEND_REQUESTS FR SET FR.ACCEPTED=1" +
-	    			"WHERE FR.REQUESTED_USERS = " + uid.replace(/"/g, "'") + "AND FR.REQUESTED_BY = " + fuid.replace(/"/g, "'");
-	    	if (tid){
+	    	var query = ""; 
+	    	if (type==='trip'){
 	    		query = "UPDATE INVITE_TRIP IT SET IT.ACCEPTED=1" +
-    			"WHERE IT.INVITED_USERS = " + uid.replace(/"/g, "'") + "AND IT.INVITED_BY = " + fuid.replace(/"/g, "'"); 
+    			" WHERE IT.INVITED_USERS = " + uid.replace(/"/g, "'") + "AND IT.INVITED_BY = " + fuid.replace(/"/g, "'"); 
+	    	} else {
+	    		query = "UPDATE FRIEND_REQUESTS FR SET FR.ACCEPTED=1" +
+    			" WHERE FR.REQUESTED_USERS = " + uid.replace(/"/g, "'") + "AND FR.REQUESTED_BY = " + fuid.replace(/"/g, "'");
 	    	}
+	    	console.log(query);
 		  	connection.execute(query, 
 		  			   [], 
 		  			   function(err, results) {
@@ -37,11 +40,10 @@ function query_db(req,res,tid,uid,fuid) {
 		  	   					res.redirect('/');
 		  	   				} else {
 		  	   					connection.close(); // done with the connection
-		  	   					if(tid == null || tid.length == 0){
-		  	   						addFriendsWith(res, uid,fuid)
-		  	   					}
-		  	   					else{
+		  	   					if(type==='trip'){
 		  	   						output_accept_request(res, "Accepted Request from" + fuid + "!");
+		  	   					} else {
+		  	   						addFriendsWith(res, uid,fuid)
 		  	   					}
 		  	   				}
 		 	
@@ -60,7 +62,8 @@ function addFriendsWith(res, uid,fuid){
 	    	console.log(err);
 	    } else {
 		  	// selecting rows
-	    	var query = "INSERT INTO FRIENDS_WITH " + "VALUES ('" + fuid.replace(/"/g, "")+ "', '" + uid.replace(/"/g, "") + "')";
+	    	var query = "INSERT ALL INTO FRIENDS_WITH " + "VALUES ('" + fuid.replace(/"/g, "")+ "', '" + uid.replace(/"/g, "") + "') " +
+	    		" INTO FRIENDS_WITH " + "VALUES ('" + uid.replace(/"/g, "")+ "', '" + fuid.replace(/"/g, "") + "') SELECT * FROM DUAL";
 	    	console.log(query);
 		  	connection.execute(query, 
 		  			   [], 
@@ -89,6 +92,11 @@ function output_accept_request( res, message) {
 /////
 // This is what's called by the main app 
 exports.do_work = function(req, res){
-	query_db(req, res, req.query.tid, req.query.uid, req.query.fuid);
+	if (!req.session.user) {
+		console.log('not logged in');
+		res.redirect('/')
+	} else {
+		query_db(req, res, req.query.tid, req.query.uid, req.query.fuid, req.query.type);
+	}
 	
 };
