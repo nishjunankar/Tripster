@@ -25,6 +25,7 @@ var express = require('express')
   , add_photo_form = require('./routes/add_photo_form')
   , friend_request = require('./routes/friend_request')
   , accept_request = require('./routes/accept_request')
+  , reject_request = require('./routes/reject_request')
   , add_photo = require('./routes/add_photo')
   , http = require('http')
   , path = require('path')
@@ -72,6 +73,7 @@ app.get('/invite_friend', invite_friend.do_work);
 app.get('/invite_friend_form', invite_friend_form.do_work);
 app.get('/pending_requests', pending_requests.do_work);
 app.get('/accept_request', accept_request.do_work);
+app.get('/reject_request', reject_request.do_work);
 app.get('/search', search.do_work);	
 app.get('/create_trip', create_trip.do_work);
 app.get('/create_trip_form', create_trip_form.do_work);

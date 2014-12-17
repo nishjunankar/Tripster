@@ -24,6 +24,12 @@ block content
           input(type='hidden', name='uid', value=uid)
           input(type='hidden', name='fuid', value=request.INVITED_BY)
           input(type='submit', value='Accept')
+        form(method='get', action='/reject_request')
+          input(type='hidden', name='type', value='trip')
+          input(type='hidden', name='tid', value=request.T_ID)
+          input(type='hidden', name='uid', value=uid)
+          input(type='hidden', name='fuid', value=request.INVITED_BY)
+          input(type='submit', value='Reject')
             
     for request in friend_reqs
       ul
@@ -37,5 +43,11 @@ block content
           input(type='hidden', name='uid', value=uid)
           input(type="hidden", name='fuid', value=request.REQUESTED_BY)
           input(type='submit', value='Accept')
+        form(method='get', action='/reject_request')
+          input(type='hidden', name='tid', value=request.T_ID)
+          input(type='hidden', name='type', value='friend')
+          input(type='hidden', name='uid', value=uid)
+          input(type="hidden", name='fuid', value=request.REQUESTED_BY)
+          input(type='submit', value='Reject')
      br
        
