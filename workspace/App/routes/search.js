@@ -73,7 +73,7 @@ function query_db(req,res,table,search) {
 	    				}
 	    		    	db.close();
 	    				});
-	    			connection.execute("SELECT * FROM PHOTO P WHERE P.PUBLISHED_BY = " + "'" + search + "'", 
+	    			connection.execute("SELECT P.P_ID, P.PUBLISHED_BY, P.URL, TO_CHAR(P.TIMES, 'Month D HH12:MI PM') AS TIMES FROM PHOTO P WHERE P.PUBLISHED_BY = " + "'" + search + "'", 
 	    		  			   [], 
 	    		  			   function(err, results) {
 	    		  	            if ( err ) {
@@ -94,7 +94,7 @@ function query_db(req,res,table,search) {
 	    			    	    	    connection.close();
 	    		  	    	            res.render('photos.jade',{
 	    		  	    	              title: "Results for: " + search,
-		    		  	    		      results: results } );
+		    		  	    		      photos: results } );
 	    		  	                    }
 	    			    	    }});
 	    			break;
